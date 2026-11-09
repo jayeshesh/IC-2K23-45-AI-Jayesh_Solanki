@@ -15,6 +15,7 @@
    - [Activity 2: Graph Traversal (BFS vs DFS)](#activity-2-graph-traversal-bfs-vs-dfs)
    - [Activity 3: Maze Solver & Robot Navigation](#activity-3-maze-solver--robot-navigation)
    - [Activity 4: Route Planning & GPS Route Planner](#activity-4-route-planning--gps-route-planner)
+   - [Activity 5: Hill Climbing](#activity-5-hill-climbing)
 4. [A* Search Algorithm & Flowchart](#a-search-algorithm--flowchart)
 5. [Empirical Benchmark & Performance Analysis](#empirical-benchmark--performance-analysis)
 6. [Homework Analysis: Comparative Evaluation](#homework-analysis-comparative-evaluation)
