@@ -40,64 +40,78 @@ For complete code, algorithms, flowcharts, benchmarks, and execution outputs:
 
 ---
 
+## Lab 2 — Heuristic Search Algorithms
+
+Lab 2 covers uninformed, informed and local search methods:
+- Breadth-First Search (BFS) and Depth-First Search (DFS).
+- Greedy Best-First Search and A*.
+- Hill Climbing for function maximization.
+- 8-puzzle solving, graph traversal, maze navigation and route planning.
+
+See [Lab2/README.md](Lab2/README.md) for the theory, activities, performance comparison and execution commands.
+
+---
+
+## Lab 3 — AI Programming Frameworks & Data Preparation
+
+Lab 3 uses the Campus Placement dataset to practise:
+- NumPy and Pandas-based data loading and inspection.
+- Exploratory Data Analysis (EDA) and summary statistics.
+- Missing-value handling and categorical encoding.
+- Leak-free train/test splitting, feature selection and scaling.
+- Matplotlib and Seaborn visualizations.
+
+The shared dataset is stored at [datasets/placement.csv](datasets/placement.csv). See [Lab3/README.md](Lab3/README.md) for the full pipeline, outputs and learning outcomes.
+
+
+---
+
 ## Repository Structure
 
-The repository strictly follows the official folder hierarchy mandated by the course guidelines:
+Each lab has its own source code, notebook, README and output artifacts. Shared datasets and diagrams stay at the repository level.
 
 ```text
 IC-2K23-45-AI-Jayesh_Solanki/
 │
-├── Lab1/                                    # Lab 1 Session
-│   ├── Code/                                # Executable source code
-│   │   ├── Experiment1.py       # Diagnostic environment verification script
-│   │   ├── exp2_production_system.py       # Production system engine (Smart Irrigation)
-│   │   ├── Experiment2.py               # Water Jug state space & BFS production system
-│   │   ├── Experiment1.ipynb # Executed interactive Jupyter notebook
-│   │   └── run_all.py                      # Automated execution & log capture script
-│   ├── Documentation/                       # Academic documentation package
-│   │   ├── Lab1_Academic_Report.pdf        # Complete 16-page official academic PDF report
-│   │   ├── figures/                        # Flowcharts, state-space tree & architecture diagrams
-│   │   │   ├── architecture_production_system.png
-│   │   │   ├── flowchart_exp1_environment_setup.png
-│   │   │   ├── flowchart_exp2_production_system.png
-│   │   │   ├── flowchart_exp3_water_jug.png
-│   │   │   └── state_space_tree_water_jug.png
-│   │   └── scripts/                        # Diagram & PDF build automation scripts
-│   │       ├── generate_figures.py
-│   │       └── build_lab1_report.py
-│   ├── outputs/                             # Verified execution outputs & logs
-│   │   ├── exp1_environment_setup_output.txt
-│   │   ├── exp1_invalid_input_output.txt
-│   │   ├── exp2_production_system_output.txt
-│   │   ├── exp2_custom_input_output.txt
-│   │   ├── exp2_invalid_input_output.txt
-│   │   ├── exp3_water_jug_output.txt
-│   │   ├── exp3_water_jug_any_jug_output.txt
-│   │   ├── exp3_water_jug_unsolvable_and_invalid_output.txt
-│   │   ├── exp3_water_jug_benchmark_output.txt
-│   │   └── screenshots/                    # Real terminal capture images
-│   └── README.md                            # Comprehensive Lab 1 overview & analysis
+├── Lab1/
+│   ├── Experiment1.py
+│   ├── exp2_production_system.py
+│   ├── Experiment2.py
+│   ├── Experiment1.ipynb
+│   ├── README.md
+│   └── outputs/
+│       ├── execution logs
+│       └── screenshots/
 │
-├── datasets/                                # Shared datasets across experiments (Placement, Iris, etc.)
+├── Lab2/
+│   ├── SearchAlgorithms.py
+│   ├── SearchAlgorithms.ipynb
+│   ├── README.md
+│   └── outputs/
+│       ├── execution logs
+│       └── screenshots/
+│
+├── Lab3/
+│   ├── DataPreprocessing.py
+│   ├── DataPreprocessing.ipynb
+│   ├── README.md
+│   └── outputs/
+│       ├── execution logs
+│       └── screenshots and plots
+│
+├── datasets/
+│   ├── README.md
+│   └── placement.csv
+├── models/
 │   └── README.md
-│
-├── models/                                  # Serialized models, weights, and checkpoints
-│   └── README.md
-│
-├── docs/                                    # Global repository documentation & artifacts
-│   ├── algorithm-flowcharts/                # Central repository for algorithm flowcharts
-│   │   ├── lab1_flowchart_exp1_environment_setup.png
-│   │   ├── lab1_flowchart_exp2_production_system.png
-│   │   └── lab1_flowchart_exp3_water_jug.png
-│   ├── architecture-diagrams/               # Central repository for architecture diagrams
-│   │   ├── lab1_architecture_production_system.png
-│   │   └── lab1_state_space_tree_water_jug.png
-│   ├── performance-analysis.pdf             # (Maintained across lab milestones)
-│   └── mini-project-report.pdf              # (Scheduled for Lab 7)
-│
-├── requirements.txt                         # Python dependencies
-├── .gitignore                               # Standard Python gitignore rules
-└── README.md                                # Root repository overview
+├── docs/
+│   ├── README.md
+│   ├── algorithm-flowcharts/
+│   ├── architecture-diagrams/
+│   └── performance-analysis.pdf
+├── requirements.txt
+├── .gitignore
+└── README.md
 ```
 
 ---
@@ -105,45 +119,62 @@ IC-2K23-45-AI-Jayesh_Solanki/
 ## Setup and Quick Start
 
 ### 1. Clone the Repository
+
 ```bash
-git clone https://github.com/JayeshSolanki/IC-2K23-45-AI-Jayesh_Solanki.git
+git clone https://github.com/jayeshesh/IC-2K23-45-AI-Jayesh_Solanki.git
 cd IC-2K23-45-AI-Jayesh_Solanki
 ```
 
-### 2. Environment Configuration
-The core Lab 1 experiments rely **exclusively on the Python 3 standard library**. To run notebooks, generate diagrams, or compile PDFs, install the supporting packages:
+### 2. Create a Virtual Environment and Install Packages
+
 ```bash
-# Create and activate a virtual environment
 python -m venv .venv
-# Windows:
-.venv\Scripts\activate
-# Linux/macOS:
+
+# Windows
+.venv\\Scripts\\activate
+
+# Linux / macOS
 source .venv/bin/activate
 
-# Install optional dependencies
 pip install -r requirements.txt
 ```
 
-### 3. Running Lab 1 Experiments
-```bash
-# Execute all Lab 1 experiments and capture console logs
-cd Lab1/Code
-python run_all.py
+### 3. Run Lab 1
 
-# Run individual experiments directly:
-python Experiment1.py
-python exp2_production_system.py
-python Experiment2.py --trace
+```bash
+python Lab1/Experiment1.py
+python Lab1/exp2_production_system.py
+python Lab1/Experiment2.py --trace
 ```
+
+### 4. Run Lab 2
+
+```bash
+python Lab2/SearchAlgorithms.py
+python Lab2/SearchAlgorithms.py --activity 8puzzle
+python Lab2/SearchAlgorithms.py --activity graph
+python Lab2/SearchAlgorithms.py --activity maze
+python Lab2/SearchAlgorithms.py --activity route
+python Lab2/SearchAlgorithms.py --activity hill
+```
+
+### 5. Run Lab 3
+
+```bash
+python Lab3/DataPreprocessing.py
+```
+
+The Lab 3 script reads `datasets/placement.csv` and saves its logs and visualizations in `Lab3/outputs/`.
 
 ---
 
 ## Software Quality and Academic Integrity Standards
 
-- **PEP-8 Compliance:** All Python source files strictly comply with PEP-8 formatting (`pycodestyle --max-line-length=79` returns 0 warnings).
-- **Static Analysis:** Verified using `pyflakes` with zero unused imports or variable leaks.
-- **Empirical Authenticity:** Zero synthetic or fabricated outputs. All logs, benchmark tables, and screenshots are captured directly from actual execution runs on Python 3.13.13.
-- **Mathematical Rigor:** Formal state-space formulations include explicit initial states, goal predicates, complete operator tables, and analytical solvability proofs.
+- Each laboratory session keeps its source code, notebook, README and output artifacts together.
+- Shared data files are stored in `datasets/` so they can be reused across labs.
+- The Campus Placement dataset included for Lab 3 is stored once in the shared dataset folder.
+- Screenshots and execution logs are kept with the corresponding laboratory outputs.
+- Python package dependencies are listed in `requirements.txt`.
 
 ---
 

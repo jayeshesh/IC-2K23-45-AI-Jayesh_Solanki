@@ -1,14 +1,14 @@
 # Central Documentation and Architectural Diagrams
 
-This folder maintains centralized academic artifacts, diagrams, and reports across all lab sessions:
+This folder stores diagrams and reports shared by the Artificial Intelligence laboratory sessions.
 
-- `algorithm-flowcharts/`: High-resolution algorithm flowcharts.
-  - `lab1_flowchart_exp1_environment_setup.png`
-  - `lab1_flowchart_exp2_production_system.png`
-  - `lab1_flowchart_exp3_water_jug.png`
-- `architecture-diagrams/`: System architecture and state-space graph diagrams.
-  - `lab1_architecture_production_system.png`
-  - `lab1_state_space_tree_water_jug.png`
-- `performance-analysis.pdf`: Comparative empirical performance report across algorithms (updated per lab session).
-- `mini-project-report.pdf`: Term project documentation (scheduled for Unit 7).
-- `presentation.pptx`: Comprehensive seminar/viva slides.
+## Available
+
+- `algorithm-flowcharts/`: Lab 1 flowcharts and the Lab 2 A* search flowchart.
+- `architecture-diagrams/`: Lab 1 production-system architecture and water-jug state-space tree.
+- `performance-analysis.pdf`: Current performance-analysis document.
+
+## Planned
+
+- `mini-project-report.pdf`: To be added with the Unit 7 mini-project.
+- Viva or seminar slides: To be added when prepared.

@@ -1,13 +1,11 @@
 # Shared Datasets Directory
 
-This folder is designated for shared tabular, image, and text benchmark datasets used across laboratory experiments as prescribed by the **IC-703 C / IC-709D Artificial Intelligence** syllabus.
+Datasets used by more than one laboratory session are stored here.
 
-### Dataset Mappings by Lab Session
+| Dataset | Used In | Description |
+|---|---|---|
+| `placement.csv` | Lab 3 (and future Lab 5 exercises) | Campus Placement dataset with student academic performance, work experience, specialization and placement status. |
 
-| Lab Session | Dataset Name | File Format | Description |
-|---|---|---|---|
-| **Lab 3 & 5** | `placement.csv` | CSV | Student academic credentials, specialization, and placement status (Campus Recruitment benchmark). |
-| **Lab 3 & 5** | `iris.csv` | CSV | Fisher's classic 3-class morphological flower measurement dataset. |
-| **Lab 7** | `traffic_signs/` | Image / Directory | Image classification dataset for Explainable AI (Grad-CAM) and Adversarial AI (FGSM). |
+The Lab 3 preprocessing script reads this shared file directly from `datasets/placement.csv`. Keep one repository copy of shared datasets so the labs do not drift apart.
 
-*Note: For Lab 1 (AI Environment Setup, Production Systems, Water Jug Problem), experiments use symbolic state spaces and rule bases; external tabular datasets are not required.*
+Other datasets can be added here when their later laboratory experiments are started.
