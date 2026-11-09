@@ -86,6 +86,30 @@ See [Lab5/README.md](Lab5/README.md) for the complete experiment. The checked-in
 
 ---
 
+## Lab 6 — Deep Learning Fundamentals using PyTorch
+
+Lab 6 implements foundational deep learning mechanics in PyTorch:
+- Multi-dimensional Tensor manipulation and tensor arithmetic.
+- Dynamic computational graph tracking and reverse-mode automatic differentiation (`autograd`).
+- Custom `torch.nn.Module` linear regression model trained via MSE loss and Adam optimizer.
+- Training loss convergence monitoring and parameter convergence inspection.
+- Model persistence saving state dictionary to `models/linear_regression.pt`.
+
+See [Lab6/README.md](Lab6/README.md) for mathematical derivations, loss curves, and execution commands.
+
+---
+
+## Lab 7 — Explainable AI, Adversarial AI & Advanced Dimensionality Reduction
+
+Lab 7 explores modern neural interpretability, security, and representation learning:
+- **Explainable AI (Grad-CAM):** Gradient-weighted Class Activation Mapping to extract saliency heatmaps highlighting discriminative spatial regions in convolutional feature maps.
+- **Adversarial Machine Learning (FGSM):** Fast Gradient Sign Method crafting bounded adversarial perturbations ($\epsilon \in [0.0, 0.30]$) to evaluate neural robustness and decision boundary vulnerability.
+- **Representation Learning (PCA & SVD):** High-dimensional projection via Singular Value Decomposition, evaluating eigenvalue scree plots and cumulative variance retention curves.
+
+See [Lab7/README.md](Lab7/README.md) for theoretical background, mathematical equations, visualization figures, and experimental results.
+
+---
+
 ## Repository Structure
 
 Each lab has its own source code, notebook, README and output artifacts. Shared datasets and diagrams stay at the repository level.
@@ -135,11 +159,33 @@ IC-2K23-45-AI-Jayesh_Solanki/
 │       ├── decision_tree_output.txt
 │       └── confusion matrix and tree diagrams
 │
+├── Lab6/
+│   ├── PytorchBasics.py
+│   ├── PytorchBasics.ipynb
+│   ├── README.md
+│   └── outputs/
+│       ├── pytorch_basics_output.txt
+│       ├── loss_convergence.png
+│       ├── linear_regression_fit.png
+│       └── screenshots/
+│
+├── Lab7/
+│   ├── ExplainableAI.py
+│   ├── ExplainableAI.ipynb
+│   ├── README.md
+│   └── outputs/
+│       ├── explainable_ai_output.txt
+│       ├── gradcam_visualization.png
+│       ├── fgsm_robustness_curve.png
+│       ├── pca_variance_analysis.png
+│       └── screenshots/
+│
 ├── datasets/
 │   ├── README.md
 │   └── placement.csv
 ├── models/
-│   └── README.md
+│   ├── README.md
+│   └── linear_regression.pt
 ├── docs/
 │   ├── README.md
 │   ├── algorithm-flowcharts/
@@ -214,6 +260,18 @@ Run a single knowledge-base example with `--example university` or `--example me
 
 ```bash
 python Lab5/DecisionTree.py
+```
+
+### 8. Run Lab 6
+
+```bash
+python Lab6/PytorchBasics.py
+```
+
+### 9. Run Lab 7
+
+```bash
+python Lab7/ExplainableAI.py
 ```
 
 ---
