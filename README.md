@@ -50,10 +50,10 @@ IC-2K23-45-AI-Jayesh_Solanki/
 │
 ├── Lab1/                                    # Lab 1 Session
 │   ├── Code/                                # Executable source code
-│   │   ├── exp1_environment_setup.py       # Diagnostic environment verification script
+│   │   ├── Experiment1.py       # Diagnostic environment verification script
 │   │   ├── exp2_production_system.py       # Production system engine (Smart Irrigation)
-│   │   ├── exp3_water_jug.py               # Water Jug state space & BFS production system
-│   │   ├── Experiment1_Environment_Setup.ipynb # Executed interactive Jupyter notebook
+│   │   ├── Experiment2.py               # Water Jug state space & BFS production system
+│   │   ├── Experiment1.ipynb # Executed interactive Jupyter notebook
 │   │   └── run_all.py                      # Automated execution & log capture script
 │   ├── Documentation/                       # Academic documentation package
 │   │   ├── Lab1_Academic_Report.pdf        # Complete 16-page official academic PDF report
@@ -133,9 +133,9 @@ cd Lab1/Code
 python run_all.py
 
 # Run individual experiments directly:
-python exp1_environment_setup.py
+python Experiment1.py
 python exp2_production_system.py
-python exp3_water_jug.py --trace
+python Experiment2.py --trace
 ```
 
 ---

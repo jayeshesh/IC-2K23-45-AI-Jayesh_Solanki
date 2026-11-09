@@ -89,19 +89,19 @@ Output   : Verdict (READY / NOT READY), diagnostic report table, and optional JS
 ![Flowchart Experiment 1](../docs/algorithm-flowcharts/lab1_flowchart_exp1_environment_setup.png)
 
 ### 6. Python Implementation
-- Python Source: [`Code/exp1_environment_setup.py`](Code/exp1_environment_setup.py)
-- Jupyter Notebook: [`Code/Experiment1_Environment_Setup.ipynb`](Code/Experiment1_Environment_Setup.ipynb)
+- Python Source: [`Experiment1.py`](Experiment1.py)
+- Jupyter Notebook: [`Experiment1.ipynb`](Experiment1.ipynb)
 
 ### 7. Execution Instructions
 ```bash
 # Standard environment check
-python Code/exp1_environment_setup.py
+python Experiment1.py
 
 # Custom minimum version requirement and JSON export
-python Code/exp1_environment_setup.py --min-python 3.10 --json outputs/exp1_environment_report.json
+python Experiment1.py --min-python 3.10 --json outputs/exp1_environment_report.json
 
 # Test input validation (malformed version)
-python Code/exp1_environment_setup.py --min-python 3.x
+python Experiment1.py --min-python 3.x
 ```
 
 ### 8. Actual Execution Output
@@ -409,21 +409,21 @@ Output   : Optimal path sequence, States expanded/generated, Reachable state spa
   ![State Space Tree](../docs/architecture-diagrams/lab1_state_space_tree_water_jug.png)
 
 ### 6. Python Implementation
-- Python Source: [`Code/exp3_water_jug.py`](Code/exp3_water_jug.py)
+- Python Source: [`Experiment2.py`](Experiment2.py)
 
 ### 7. Execution Instructions
 ```bash
 # Standard 4-3-2 problem with goal in Jug A and trace enabled
-python Code/exp3_water_jug.py --trace
+python Experiment2.py --trace
 
 # Target in either jug (optimal 4-step path)
-python Code/exp3_water_jug.py -a 4 -b 3 -t 2 -g ANY
+python Experiment2.py -a 4 -b 3 -t 2 -g ANY
 
 # Comprehensive multi-instance benchmark
-python Code/exp3_water_jug.py --benchmark
+python Experiment2.py --benchmark
 
 # Solvability validation (impossible instance)
-python Code/exp3_water_jug.py -a 6 -b 4 -t 3 -g ANY
+python Experiment2.py -a 6 -b 4 -t 3 -g ANY
 ```
 
 ### 8. Actual Execution Output
@@ -556,10 +556,10 @@ Comparative summary across standard classical AI formulations studied in Unit 1:
 ```text
 Lab1/
 ├── Code/
-│   ├── exp1_environment_setup.py          # Environment verification module
+│   ├── Experiment1.py          # Environment verification module
 │   ├── exp2_production_system.py          # Production system engine (Smart Irrigation)
-│   ├── exp3_water_jug.py                  # Water Jug state space & BFS production system
-│   ├── Experiment1_Environment_Setup.ipynb # Interactive verified Jupyter notebook
+│   ├── Experiment2.py                  # Water Jug state space & BFS production system
+│   ├── Experiment1.ipynb # Interactive verified Jupyter notebook
 │   └── run_all.py                         # Master test & automated output capture script
 ├── Documentation/
 │   ├── Lab1_Academic_Report.pdf           # Comprehensive 16-page academic documentation PDF
@@ -611,13 +611,13 @@ python run_all.py
 ### Running Individual Experiments
 ```bash
 # Experiment 1: Environment Verification
-python exp1_environment_setup.py
+python Experiment1.py
 
 # Experiment 2: Production System
 python exp2_production_system.py
 
 # Experiment 3: Water Jug Problem
-python exp3_water_jug.py --trace
+python Experiment2.py --trace
 ```
 
 ---
