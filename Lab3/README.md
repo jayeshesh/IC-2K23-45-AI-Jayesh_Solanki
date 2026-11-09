@@ -103,6 +103,11 @@ Features were ranked on the training partition using both parametric ANOVA $F$-t
 
 ---
 
+## Execution Output & Screenshots
+
+### Terminal Pipeline Execution:
+![Data Preprocessing Terminal Screenshot](outputs/screenshots/data_preprocessing_output.png)
+
 ## Data Visualizations
 
 1. **Secondary Academic Marks vs Placement Status:**

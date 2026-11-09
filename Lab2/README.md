@@ -55,6 +55,10 @@ Informed search utilizes domain-specific heuristic functions $h(n)$ estimating t
 ## Laboratory Activities & Problem Domains
 
 ### Activity 1: 8-Puzzle Problem Solver
+
+#### Execution Output Screenshot:
+![8-Puzzle Solver Output](outputs/screenshots/8puzzle_output.png)
+
 The 8-puzzle consists of a $3 \times 3$ grid with 8 numbered tiles and one blank space (0).
 - **Solvability Parity (Inversion Invariant):** An 8-puzzle instance is solvable if and only if the number of inversions among non-blank tiles is **even**:
   $$\text{inversions} = \sum_{i < j} \mathbb{I}(\text{tile}_i > \text{tile}_j) \equiv 0 \pmod 2$$
@@ -70,11 +74,19 @@ Initial State:            Goal State:
 ```
 
 ### Activity 2: Graph Traversal (BFS vs DFS)
+
+#### Execution Output Screenshot:
+![Graph Traversal Output](outputs/screenshots/graph_traversal_output.png)
+
 Evaluates level-order vs depth-first traversal across an 8-node cyclic undirected graph (`A` through `H`).
 - **BFS Traversal Order:** `A -> B -> C -> D -> E -> F -> G -> H` (Guarantees minimal hop count).
 - **DFS Traversal Order:** `A -> B -> E -> H` (Reaches destination deep along branch with lower memory overhead).
 
 ### Activity 3: Maze Solver & Robot Navigation
+
+#### Execution Output Screenshot:
+![Maze Solver Output](outputs/screenshots/maze_navigation_output.png)
+
 Simulates an autonomous mobile robot navigating an $8 \times 8$ grid containing binary obstacles ($0 = \text{free}, 1 = \text{wall}$).
 - State: $(r, c) \in [0, 7] \times [0, 7]$.
 - Start: $(0, 0)$, Goal: $(7, 7)$.
@@ -82,6 +94,10 @@ Simulates an autonomous mobile robot navigating an $8 \times 8$ grid containing 
 - Evaluator: $A^*$ using Manhattan distance to target. Discovers optimal 14-step obstacle-avoidance trajectory.
 
 ### Activity 4: Route Planning & GPS Route Planner
+
+#### Execution Output Screenshot:
+![Route Planning Output](outputs/screenshots/route_planning_output.png)
+
 Models the classic Romania road network connecting **Arad to Bucharest** with real travel distances ($g(n)$) and straight-line distance heuristics ($h(n)$).
 - **Greedy Best-First:** Arad $\rightarrow$ Sibiu $\rightarrow$ Fagaras $\rightarrow$ Bucharest (Distance: 450 km).
 - **A\* Search:** Arad $\rightarrow$ Sibiu $\rightarrow$ Rimnicu $\rightarrow$ Pitesti $\rightarrow$ Bucharest (Optimal Distance: 418 km).
