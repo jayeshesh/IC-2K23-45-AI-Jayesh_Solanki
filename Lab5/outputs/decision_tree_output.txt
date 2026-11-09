@@ -1,0 +1,38 @@
+========================================================================
+LAB 5: DECISION TREE CLASSIFIER AND MODEL EVALUATION
+========================================================================
+Dataset: placement.csv
+Samples: 40 | Predictors: 12
+Training samples: 32 | Test samples: 8
+Excluded columns: sl_no (identifier), salary (target leakage)
+Tree depth limit: 4
+
+Performance Metrics (weighted average):
+Accuracy : 0.8750
+Precision: 0.9062
+Recall   : 0.8750
+F1-score : 0.8770
+
+Classification Report:
+              precision    recall  f1-score   support
+
+  Not Placed       0.75      1.00      0.86         3
+      Placed       1.00      0.80      0.89         5
+
+    accuracy                           0.88         8
+   macro avg       0.88      0.90      0.87         8
+weighted avg       0.91      0.88      0.88         8
+
+Confusion Matrix (actual rows, predicted columns):
+[[3 0]
+ [1 4]]
+
+Top Feature Importances:
+  numeric__hsc_p                     0.8121
+  categorical__ssc_b_Central         0.1074
+  numeric__degree_p                  0.0805
+
+Execution time: 0.0348 seconds
+Saved: Lab5/outputs/confusion_matrix.svg
+Saved: Lab5/outputs/decision_tree.svg
+========================================================================

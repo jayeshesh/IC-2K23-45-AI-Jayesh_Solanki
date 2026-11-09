@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="410" viewBox="0 0 640 410" role="img" aria-labelledby="title desc">
+<title id="title">Decision tree confusion matrix</title><desc id="desc">Actual versus predicted placement classes. Counts are 3, 0, 1 and 4 for the 40-row development smoke test.</desc>
+<rect width="640" height="410" fill="white"/><text x="320" y="38" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold" fill="#222">Decision Tree - Confusion Matrix</text>
+<text x="320" y="76" text-anchor="middle" font-family="Arial" font-size="15" fill="#333">Predicted class</text><text x="40" y="235" text-anchor="middle" transform="rotate(-90 40 235)" font-family="Arial" font-size="15" fill="#333">Actual class</text>
+<text x="270" y="112" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Not Placed</text><text x="435" y="112" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Placed</text>
+<text x="118" y="190" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Not Placed</text><text x="118" y="280" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Placed</text>
+<rect x="190" y="130" width="160" height="80" fill="#c7e9c0" stroke="#555"/><rect x="350" y="130" width="160" height="80" fill="#f7f7f7" stroke="#555"/><rect x="190" y="210" width="160" height="80" fill="#f7f7f7" stroke="#555"/><rect x="350" y="210" width="160" height="80" fill="#c7e9c0" stroke="#555"/>
+<g font-family="Arial" font-size="25" font-weight="bold" text-anchor="middle" fill="#222"><text x="270" y="180">3</text><text x="430" y="180">0</text><text x="270" y="260">1</text><text x="430" y="260">4</text></g>
+<text x="320" y="345" text-anchor="middle" font-family="Arial" font-size="13" fill="#555">Captured development smoke test (40 rows, 8 test samples)</text></svg>
