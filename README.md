@@ -2,7 +2,6 @@
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Code style: PEP 8](https://img.shields.io/badge/code%20style-PEP%208-brightgreen.svg)](https://www.python.org/dev/peps/pep-0008/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Academic: IIPS DAVV](https://img.shields.io/badge/academic-IIPS%20DAVV-orange.svg)](https://www.iips.edu.in/)
 
 This repository contains practical implementations, state-space formulations, search algorithms, empirical benchmarks, and academic documentation for the **Artificial Intelligence Laboratory** course (**IC-703 C / IC-709D**), Master of Computer Applications (MCA), at the **International Institute of Professional Studies (IIPS), Devi Ahilya Vishwavidyalaya (DAVV), Indore**.
@@ -97,7 +96,6 @@ IC-2K23-45-AI-Jayesh_Solanki/
 │   └── mini-project-report.pdf              # (Scheduled for Lab 7)
 │
 ├── requirements.txt                         # Python dependencies
-├── LICENSE                                  # MIT License
 ├── .gitignore                               # Standard Python gitignore rules
 └── README.md                                # Root repository overview
 ```
