@@ -19,9 +19,9 @@ Only "required" checks decide the verdict; "optional" checks are informative.
 
 Usage examples
 --------------
-    python exp1_environment_setup.py
-    python exp1_environment_setup.py --min-python 3.10
-    python exp1_environment_setup.py --json ../outputs/env_report.json
+    python Experiment1.py
+    python Experiment1.py --min-python 3.10
+    python Experiment1.py --json ../outputs/env_report.json
 
 Only the Python standard library is used.
 """

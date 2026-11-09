@@ -226,21 +226,21 @@ Output   : Final working memory WM, Fired rule sequence, Audit trace
 ![Flowchart Experiment 2](../docs/algorithm-flowcharts/lab1_flowchart_exp2_production_system.png)
 
 ### 6. Python Implementation
-- Python Source: [`Code/exp2_production_system.py`](Code/exp2_production_system.py)
+- Python Source: [`exp2_production_system.py`](exp2_production_system.py)
 
 ### 7. Execution Instructions
 ```bash
 # Run all predefined baseline scenarios
-python Code/exp2_production_system.py
+python exp2_production_system.py
 
 # Custom CLI arguments
-python Code/exp2_production_system.py -m 25 -t 29 -r no -s vegetative
+python exp2_production_system.py -m 25 -t 29 -r no -s vegetative
 
 # Interactive prompt mode
-python Code/exp2_production_system.py --interactive
+python exp2_production_system.py --interactive
 
 # Test exception handling (out-of-bounds input)
-python Code/exp2_production_system.py -m 120 -t 30 -r no -s mature
+python exp2_production_system.py -m 120 -t 30 -r no -s mature
 ```
 
 ### 8. Actual Execution Output
@@ -553,74 +553,44 @@ Comparative summary across standard classical AI formulations studied in Unit 1:
 
 ## Repository File Structure
 
+The Lab 1 programs are kept directly inside the `Lab1/` folder. Shared flowcharts and architecture diagrams are stored in the repository-level `docs/` folder.
+
 ```text
 Lab1/
-├── Code/
-│   ├── Experiment1.py          # Environment verification module
-│   ├── exp2_production_system.py          # Production system engine (Smart Irrigation)
-│   ├── Experiment2.py                  # Water Jug state space & BFS production system
-│   ├── Experiment1.ipynb # Interactive verified Jupyter notebook
-│   └── run_all.py                         # Master test & automated output capture script
-├── Documentation/
-│   ├── Lab1_Academic_Report.pdf           # Comprehensive 16-page academic documentation PDF
-│   ├── figures/                           # High-resolution architectural & flowchart diagrams
-│   │   ├── architecture_production_system.png
-│   │   ├── flowchart_exp1_environment_setup.png
-│   │   ├── flowchart_exp2_production_system.png
-│   │   ├── flowchart_exp3_water_jug.png
-│   │   └── state_space_tree_water_jug.png
-│   └── scripts/
-│       ├── generate_figures.py            # Generates all flowcharts and diagram PNGs
-│       └── build_lab1_report.py           # ReportLab compilation script for academic PDF
-├── outputs/
-│   ├── exp1_environment_setup_output.txt  # Verified console log of Exp 1
-│   ├── exp1_invalid_input_output.txt      # Negative testing log of Exp 1
-│   ├── exp2_production_system_output.txt  # Verified console log of Exp 2
-│   ├── exp2_custom_input_output.txt       # Custom scenario log of Exp 2
-│   ├── exp2_invalid_input_output.txt      # Negative testing log of Exp 2
-│   ├── exp3_water_jug_output.txt          # Verified console log of Exp 3 (trace mode)
-│   ├── exp3_water_jug_any_jug_output.txt  # 4-step path log of Exp 3
-│   ├── exp3_water_jug_benchmark_output.txt# Multi-instance benchmark log
-│   ├── exp3_water_jug_unsolvable_and_invalid_output.txt # Negative testing log of Exp 3
-│   └── screenshots/                       # Rendered terminal output images
-│       ├── exp1_environment_setup.png
-│       ├── exp2_production_system.png
-│       ├── exp3_water_jug.png
-│       └── ...
-└── README.md                              # This laboratory session README
+├── Experiment1.py
+├── exp2_production_system.py
+├── Experiment2.py
+├── Experiment1.ipynb
+├── README.md
+└── outputs/
+    ├── execution logs (.txt and .json)
+    └── screenshots/
 ```
-
----
 
 ## Setup and Execution Instructions
 
 ### Prerequisites
-- Python 3.8 or higher (CPython recommended).
-- No external libraries required for core experiments.
-- Optional packages for documentation and visualization: `pillow`, `reportlab`, `nbconvert`, `jupyterlab`.
+- Python 3.8 or higher.
+- No external packages are required for the three core Lab 1 programs.
 
-### Running All Experiments Automatically
+### Run the Experiments
+
+Run these commands from the repository's main folder:
+
 ```bash
-# Navigate to the Code folder
-cd Lab1/Code
-
-# Run all experiments and update outputs/
-python run_all.py
+python Lab1/Experiment1.py
+python Lab1/exp2_production_system.py
+python Lab1/Experiment2.py --trace
 ```
 
-### Running Individual Experiments
+The production-system program also accepts custom sensor values:
+
 ```bash
-# Experiment 1: Environment Verification
-python Experiment1.py
-
-# Experiment 2: Production System
-python exp2_production_system.py
-
-# Experiment 3: Water Jug Problem
-python Experiment2.py --trace
+python Lab1/exp2_production_system.py -m 25 -t 29 -r no -s vegetative
+python Lab1/exp2_production_system.py --interactive
 ```
 
----
+The environment setup notebook can be opened from `Lab1/Experiment1.ipynb` in Jupyter Notebook, JupyterLab, or Google Colab.
 
 ## Verification and Code Quality Standards
 

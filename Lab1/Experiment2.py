@@ -26,11 +26,11 @@ The problem is formulated as a state space and solved as a production system:
 
 Usage examples
 --------------
-    python exp3_water_jug.py                      # classic 4-3-2 problem
-    python exp3_water_jug.py --trace              # show rule matching trace
-    python exp3_water_jug.py -a 5 -b 3 -t 4 -g ANY
-    python exp3_water_jug.py --interactive        # read inputs from keyboard
-    python exp3_water_jug.py --benchmark          # performance table
+    python Experiment2.py                      # classic 4-3-2 problem
+    python Experiment2.py --trace              # show rule matching trace
+    python Experiment2.py -a 5 -b 3 -t 4 -g ANY
+    python Experiment2.py --interactive        # read inputs from keyboard
+    python Experiment2.py --benchmark          # performance table
 
 Only the Python standard library is used.
 """
