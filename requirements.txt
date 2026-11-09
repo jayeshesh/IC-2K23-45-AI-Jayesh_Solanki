@@ -1,0 +1,2 @@
+# Lab 1 uses Python standard-library functionality.
+# Add third-party packages here only when an experiment requires them.
