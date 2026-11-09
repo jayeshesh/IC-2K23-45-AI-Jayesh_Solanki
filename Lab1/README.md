@@ -86,7 +86,7 @@ Output   : Verdict (READY / NOT READY), diagnostic report table, and optional JS
 ```
 
 ### 5. Flowchart
-![Flowchart Experiment 1](Documentation/figures/flowchart_exp1_environment_setup.png)
+![Flowchart Experiment 1](../docs/algorithm-flowcharts/lab1_flowchart_exp1_environment_setup.png)
 
 ### 6. Python Implementation
 - Python Source: [`Code/exp1_environment_setup.py`](Code/exp1_environment_setup.py)
@@ -223,7 +223,7 @@ Output   : Final working memory WM, Fired rule sequence, Audit trace
 ```
 
 ### 5. Flowchart
-![Flowchart Experiment 2](Documentation/figures/flowchart_exp2_production_system.png)
+![Flowchart Experiment 2](../docs/algorithm-flowcharts/lab1_flowchart_exp2_production_system.png)
 
 ### 6. Python Implementation
 - Python Source: [`Code/exp2_production_system.py`](Code/exp2_production_system.py)
@@ -403,10 +403,10 @@ Output   : Optimal path sequence, States expanded/generated, Reachable state spa
 
 ### 5. Flowchart & State-Space Tree
 - **Flowchart**:
-  ![Flowchart Experiment 3](Documentation/figures/flowchart_exp3_water_jug.png)
+  ![Flowchart Experiment 3](../docs/algorithm-flowcharts/lab1_flowchart_exp3_water_jug.png)
 
 - **Search Tree (Generated from Solver)**:
-  ![State Space Tree](Documentation/figures/state_space_tree_water_jug.png)
+  ![State Space Tree](../docs/architecture-diagrams/lab1_state_space_tree_water_jug.png)
 
 ### 6. Python Implementation
 - Python Source: [`Code/exp3_water_jug.py`](Code/exp3_water_jug.py)
