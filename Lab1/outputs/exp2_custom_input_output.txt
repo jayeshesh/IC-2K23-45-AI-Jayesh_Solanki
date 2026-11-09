@@ -1,0 +1,43 @@
+$ python exp2_production_system.py -m 25 -t 29 -r no -s vegetative
+# Captured: 2026-11-09 15:25:00 | Python 3.13.13 | Windows | exit code: 0
+========================================================================
+ EXPERIMENT 2 : PRODUCTION SYSTEM - SMART IRRIGATION ADVISOR
+========================================================================
+Conflict resolution: refractoriness > priority > specificity > rule order
+
+Rule base (priority shown in brackets)
+  R01 [30] IF soil_moisture < 30 THEN soil_status = dry
+  R02 [30] IF soil_moisture >= 30 AND soil_moisture <= 60 THEN soil_status = optimal
+  R03 [30] IF soil_moisture > 60 THEN soil_status = wet
+  R04 [30] IF temperature >= 35 THEN heat_stress = yes
+  R05 [30] IF temperature < 35 THEN heat_stress = no
+  R06 [20] IF soil_status == dry AND heat_stress == yes THEN water_need = high
+  R07 [20] IF soil_status == dry AND heat_stress == no THEN water_need = medium
+  R08 [20] IF soil_status == optimal AND crop_stage == flowering THEN water_need = medium
+  R09 [20] IF soil_status == optimal AND crop_stage != flowering THEN water_need = low
+  R10 [20] IF soil_status == wet THEN water_need = none
+  R11 [10] IF water_need == high THEN decision = IRRIGATE_NOW, duration_min = 40
+  R12 [10] IF water_need == medium AND rain_forecast == no THEN decision = IRRIGATE_NOW, duration_min = 20
+  R13 [10] IF water_need == medium AND rain_forecast == yes THEN decision = POSTPONE, duration_min = 0
+  R14 [10] IF water_need in {low, none} THEN decision = NO_IRRIGATION, duration_min = 0
+  R15 [ 5] IF soil_moisture > 85 THEN drainage_alert = CHECK_FIELD_DRAINAGE
+  R16 [ 5] IF heat_stress == yes AND crop_stage == seedling THEN shade_advice = USE_SHADE_NET
+
+------------------------------------------------------------------------
+ User scenario
+------------------------------------------------------------------------
+Initial working memory: soil_moisture=25.0, temperature=29.0, rain_forecast=no, crop_stage=vegetative
+  Cycle  1 | Conflict set: {R01, R05}
+           | Fired: R01 (priority 30, specificity 1) -> soil_status=dry
+  Cycle  2 | Conflict set: {R05}
+           | Fired: R05 (priority 30, specificity 1) -> heat_stress=no
+  Cycle  3 | Conflict set: {R07}
+           | Fired: R07 (priority 20, specificity 2) -> water_need=medium
+  Cycle  4 | Conflict set: {R12}
+           | Fired: R12 (priority 10, specificity 2) -> decision=IRRIGATE_NOW, duration_min=20
+Halted after 4 cycles: quiescence (conflict set empty)
+Derived facts         : soil_status=dry, heat_stress=no, water_need=medium, decision=IRRIGATE_NOW, duration_min=20
+DECISION              : IRRIGATE_NOW (duration 20 min)
+Advisories            : none
+Explanation (why)     : R01 -> R05 -> R07 -> R12
+Rule match attempts   : 80   Execution time: 0.059 ms

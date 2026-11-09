@@ -1,0 +1,114 @@
+{
+  "experiment": "Lab 1 - Experiment 1: Environment Setup",
+  "ready": true,
+  "checks": [
+    {
+      "name": "Python interpreter",
+      "status": "PASS",
+      "detail": "Python 3.13.13 (CPython), required >= 3.8",
+      "required": true
+    },
+    {
+      "name": "Operating system",
+      "status": "INFO",
+      "detail": "Windows 11 (AMD64)",
+      "required": false
+    },
+    {
+      "name": "Interpreter path",
+      "status": "INFO",
+      "detail": "~\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+      "required": false
+    },
+    {
+      "name": "Virtual environment",
+      "status": "INFO",
+      "detail": "not active (system interpreter)",
+      "required": false
+    },
+    {
+      "name": "pip package manager",
+      "status": "PASS",
+      "detail": "pip 26.1.1",
+      "required": true
+    },
+    {
+      "name": "Jupyter: ipykernel",
+      "status": "PASS",
+      "detail": "7.3.0",
+      "required": false
+    },
+    {
+      "name": "Jupyter: nbformat",
+      "status": "PASS",
+      "detail": "5.10.4",
+      "required": false
+    },
+    {
+      "name": "Jupyter: nbconvert",
+      "status": "PASS",
+      "detail": "7.17.1",
+      "required": false
+    },
+    {
+      "name": "Jupyter: notebook",
+      "status": "MISSING",
+      "detail": "not installed (pip install notebook)",
+      "required": false
+    },
+    {
+      "name": "Jupyter: jupyterlab",
+      "status": "PASS",
+      "detail": "4.6.1",
+      "required": false
+    },
+    {
+      "name": "Google Colab runtime",
+      "status": "INFO",
+      "detail": "not detected (local machine)",
+      "required": false
+    },
+    {
+      "name": "Lab 1 standard modules",
+      "status": "PASS",
+      "detail": "8 modules imported: argparse, collections, dataclasses, math, operator, time, typing, json",
+      "required": true
+    },
+    {
+      "name": "Later labs: numpy",
+      "status": "INFO",
+      "detail": "2.2.6",
+      "required": false
+    },
+    {
+      "name": "Later labs: pandas",
+      "status": "INFO",
+      "detail": "3.0.3",
+      "required": false
+    },
+    {
+      "name": "Later labs: matplotlib",
+      "status": "INFO",
+      "detail": "not installed (not needed in Lab 1)",
+      "required": false
+    },
+    {
+      "name": "Later labs: scikit-learn",
+      "status": "INFO",
+      "detail": "1.8.0",
+      "required": false
+    },
+    {
+      "name": "Later labs: torch",
+      "status": "INFO",
+      "detail": "not installed (not needed in Lab 1)",
+      "required": false
+    },
+    {
+      "name": "Sanity computation",
+      "status": "PASS",
+      "detail": "sum of squares 0..99999 = 333328333350000 in 3.32 ms",
+      "required": true
+    }
+  ]
+}

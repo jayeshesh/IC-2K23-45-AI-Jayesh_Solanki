@@ -1,0 +1,11 @@
+$ python exp2_production_system.py -m 120 -t 30 -r no -s mature
+# Captured: 2026-11-09 15:25:00 | Python 3.13.13 | Windows | exit code: 2
+Input error: Soil moisture must be in 0-100 %, got 120.
+
+$ python exp2_production_system.py -m 40 -t 30 -r maybe -s mature
+# Captured: 2026-11-09 15:25:00 | Python 3.13.13 | Windows | exit code: 2
+Input error: Rain forecast must be one of ('yes', 'no'), got 'maybe'.
+
+$ python exp2_production_system.py -m 40
+# Captured: 2026-11-09 15:25:00 | Python 3.13.13 | Windows | exit code: 2
+Input error: Provide all of --moisture, --temperature, --rain and --stage (or none of them).

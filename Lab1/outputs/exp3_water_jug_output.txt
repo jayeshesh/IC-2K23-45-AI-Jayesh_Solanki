@@ -1,0 +1,61 @@
+$ python exp3_water_jug.py --trace
+# Captured: 2026-11-09 15:25:00 | Python 3.13.13 | Windows | exit code: 0
+========================================================================
+ EXPERIMENT 3 : WATER JUG PROBLEM AS A PRODUCTION SYSTEM
+========================================================================
+Problem formulation
+  Jug A capacity      : 4 litres
+  Jug B capacity      : 3 litres
+  Target              : 2 litres in Jug A
+  State               : (x, y) = litres in (Jug A, Jug B)
+  State space         : {(x, y) | 0 <= x <= 4, 0 <= y <= 3}  (20 states)
+  Initial state       : (0, 0)
+  Goal state(s)       : (2, y) for any y in [0, 3]
+  Solvability check   : gcd(4, 3) = 1 divides 2 -> solvable
+
+Production rules (IF condition THEN new state)
+  Rule Name                            Condition                        New state
+  ----------------------------------------------------------------------
+  R1   Fill Jug A                      x < A                            (A, y)
+  R2   Fill Jug B                      y < B                            (x, B)
+  R3   Empty Jug A                     x > 0                            (0, y)
+  R4   Empty Jug B                     y > 0                            (x, 0)
+  R5   Pour A into B until B is full   x > 0 and y < B and x + y >= B   (x - (B - y), B)
+  R6   Pour B into A until A is full   y > 0 and x < A and x + y >= A   (A, y - (A - x))
+  R7   Pour all water of A into B      x > 0 and x + y < B              (0, x + y)
+  R8   Pour all water of B into A      y > 0 and x + y < A              (x + y, 0)
+
+Rule-application trace (control strategy: breadth-wise, no repeated states)
+  Format: RuleId:(new state); '*' = state already generated
+  [ 1] Expand (0, 0) -> R1:(4, 0)  R2:(0, 3)
+  [ 2] Expand (4, 0) -> R2:(4, 3)  R3:(0, 0)*  R5:(1, 3)
+  [ 3] Expand (0, 3) -> R1:(4, 3)*  R4:(0, 0)*  R8:(3, 0)
+  [ 4] Expand (4, 3) -> R3:(0, 3)*  R4:(4, 0)*
+  [ 5] Expand (1, 3) -> R1:(4, 3)*  R3:(0, 3)*  R4:(1, 0)  R6:(4, 0)*
+  [ 6] Expand (3, 0) -> R1:(4, 0)*  R2:(3, 3)  R3:(0, 0)*  R5:(0, 3)*
+  [ 7] Expand (1, 0) -> R1:(4, 0)*  R2:(1, 3)*  R3:(0, 0)*  R7:(0, 1)
+  [ 8] Expand (3, 3) -> R1:(4, 3)*  R3:(0, 3)*  R4:(3, 0)*  R6:(4, 2)
+  [ 9] Expand (0, 1) -> R1:(4, 1)  R2:(0, 3)*  R4:(0, 0)*  R8:(1, 0)*
+  [10] Expand (4, 2) -> R2:(4, 3)*  R3:(0, 2)  R4:(4, 0)*  R5:(3, 3)*
+  [11] Expand (4, 1) -> R2:(4, 3)*  R3:(0, 1)*  R4:(4, 0)*  R5:(2, 3)
+
+Solution path
+  Step  Rule  Action                            State (x, y)
+  ----------------------------------------------------------------------
+  0     -     Initial state                     (0, 0)
+  1     R1    Fill Jug A                        (4, 0)
+  2     R5    Pour A into B until B is full     (1, 3)
+  3     R4    Empty Jug B                       (1, 0)
+  4     R7    Pour all water of A into B        (0, 1)
+  5     R1    Fill Jug A                        (4, 1)
+  6     R5    Pour A into B until B is full     (2, 3)
+
+Performance analysis
+  Solution length (rule applications) : 6
+  States expanded                     : 11
+  States generated (incl. repeats)    : 39
+  Maximum OPEN list size              : 3
+  States reachable from (0, 0)        : 14
+  Execution time                      : 0.042 ms
+
+Result: GOAL REACHED - final state (2, 3) contains 2 L in the required jug after 6 rule applications.
