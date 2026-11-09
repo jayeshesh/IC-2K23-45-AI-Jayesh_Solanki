@@ -1,0 +1,68 @@
+====================================================================
+LAB 4: KNOWLEDGE REPRESENTATION & LOGICAL REASONING
+====================================================================
+
+1. PREDICATE REPRESENTATION AND UNIVERSITY KNOWLEDGE BASE
+
+University knowledge base
+Initial facts:
+  EnrolledIn(Aarav, MCA)
+  Offers(IIPS DAVV, MCA)
+  Student(Aarav)
+Inferred facts:
+  LearnerOf(Aarav, MCA)
+  StudiesAt(Aarav, IIPS DAVV)
+Final knowledge base:
+  EnrolledIn(Aarav, MCA)
+  LearnerOf(Aarav, MCA)
+  Offers(IIPS DAVV, MCA)
+  Student(Aarav)
+  StudiesAt(Aarav, IIPS DAVV)
+
+2. SEMANTIC NETWORK CONSTRUCTION
+Semantic network (subject --relation--> object):
+  Aarav --instance-of--> Student
+  Aarav --enrolled-in--> MCA
+  MCA --offered-by--> IIPS DAVV
+  IIPS DAVV --part-of--> DAVV
+  Student --is-a--> Person
+
+3. FRAME REPRESENTATION
+Student frame:
+  Frame: Student
+  Name: Aarav
+  Programme: MCA
+  Institute: IIPS DAVV
+  Year: 1
+  Status: Enrolled
+Course frame:
+  Frame: Course
+  Name: MCA
+  Duration: 4 years
+  Department: Computer Applications
+
+4. CONCEPTUAL DEPENDENCY
+Conceptual dependency example: John gives a book to Mary
+  Primitive=ATRANS (transfer of possession); Actor=John; Object=Book; From=John; To=Mary
+
+5. RULE-BASED MEDICAL KNOWLEDGE REPRESENTATION
+Note: This is a classroom rule demonstration, not medical advice.
+
+Medical example
+Initial facts:
+  Cough(PatientA)
+  Fatigue(PatientA)
+  Fever(PatientA)
+Inferred facts:
+  PossibleFlu(PatientA)
+  SuggestRestAndConsultation(PatientA)
+Final knowledge base:
+  Cough(PatientA)
+  Fatigue(PatientA)
+  Fever(PatientA)
+  PossibleFlu(PatientA)
+  SuggestRestAndConsultation(PatientA)
+
+====================================================================
+LAB 4 COMPLETED
+====================================================================

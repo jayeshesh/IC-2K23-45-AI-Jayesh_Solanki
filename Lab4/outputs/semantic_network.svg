@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="480" viewBox="0 0 900 480" role="img" aria-labelledby="title desc">
+  <title id="title">University semantic network</title>
+  <desc id="desc">Aarav is an instance of Student and enrolled in MCA. MCA is offered by IIPS DAVV, which is part of DAVV. Student is a Person.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L8,3 z" fill="#555"/></marker>
+    <style>
+      .node{fill:#fff;stroke:#222;stroke-width:2}.nodeText{font:600 18px Arial,sans-serif;fill:#171717;text-anchor:middle;dominant-baseline:middle}
+      .edge{stroke:#555;stroke-width:2;fill:none;marker-end:url(#arrow)}.edgeText{font:14px Arial,sans-serif;fill:#444;text-anchor:middle}
+      .heading{font:700 24px Arial,sans-serif;fill:#111;text-anchor:middle}
+    </style>
+  </defs>
+  <text x="450" y="38" class="heading">University Knowledge Base: Semantic Network</text>
+  <path class="edge" d="M165 155 L285 155"/><text x="225" y="140" class="edgeText">instance-of</text>
+  <path class="edge" d="M165 180 Q235 260 355 300"/><text x="235" y="250" class="edgeText">enrolled-in</text>
+  <path class="edge" d="M425 300 L585 300"/><text x="505" y="285" class="edgeText">offered-by</text>
+  <path class="edge" d="M655 265 Q710 195 760 155"/><text x="730" y="210" class="edgeText">part-of</text>
+  <path class="edge" d="M355 155 L585 105"/><text x="470" y="112" class="edgeText">is-a</text>
+  <rect class="node" x="75" y="125" width="90" height="60" rx="12"/><text class="nodeText" x="120" y="155">Aarav</text>
+  <rect class="node" x="285" y="125" width="140" height="60" rx="12"/><text class="nodeText" x="355" y="155">Student</text>
+  <rect class="node" x="585" y="75" width="140" height="60" rx="12"/><text class="nodeText" x="655" y="105">Person</text>
+  <rect class="node" x="355" y="270" width="140" height="60" rx="12"/><text class="nodeText" x="425" y="300">MCA</text>
+  <rect class="node" x="585" y="270" width="140" height="60" rx="12"/><text class="nodeText" x="655" y="300">IIPS DAVV</text>
+  <rect class="node" x="760" y="125" width="100" height="60" rx="12"/><text class="nodeText" x="810" y="155">DAVV</text>
+  <text x="450" y="430" font="14px Arial" fill="#666" text-anchor="middle">Nodes represent entities or concepts; labelled arrows represent relationships.</text>
+</svg>
