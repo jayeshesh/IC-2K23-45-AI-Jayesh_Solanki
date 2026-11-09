@@ -20,7 +20,7 @@ Following the official **DAVV MCA AI Lab Syllabus (IC-703 C / IC-709D)**, the la
 | [**Lab 2**](Lab2/README.md) | **Unit 2: CO2** | **Heuristic Search Algorithms (BFS, DFS, Hill Climbing, Best First, A*)** | Completed |
 | [**Lab 3**](Lab3/README.md) | **Unit 3: CO2, CO5** | **AI Programming Frameworks & Data Preparation (NumPy, Pandas, EDA, Pipelines)** | Completed |
 | [**Lab 4**](Lab4/README.md) | **Unit 4: CO1, CO3** | **Knowledge Representation & Logical Reasoning (Predicates, Rule-Based Systems, Semantic Networks)** | Completed |
-| **Lab 5** | Unit 5: CO4, CO5 | Machine Learning for Intelligent Decision Making (Decision Trees, Model Eval) | Scheduled |
+| [**Lab 5**](Lab5/README.md) | **Unit 5: CO4, CO5** | **Decision Tree Classifier and Model Evaluation** | Completed |
 | **Lab 6** | Unit 6: CO4, CO5 | Deep Learning Fundamentals using PyTorch (Tensors, Autograd, Regressors, NNs) | Scheduled |
 | **Lab 7** | Unit 7: CO4, CO5 | Explainable AI (Grad-CAM), Adversarial AI (FGSM), PCA/SVD & Mini-Project | Scheduled |
 
@@ -78,6 +78,14 @@ See [Lab4/README.md](Lab4/README.md) for the algorithm, comparison of representa
 
 ---
 
+## Lab 5 — Decision Tree Classifier and Model Evaluation
+
+Lab 5 uses the shared Campus Placement dataset to train a Decision Tree Classifier. It covers feature-matrix creation, stratified train/test splitting, numeric and categorical preprocessing, prediction, accuracy, precision, recall, F1-score, a confusion matrix and decision-tree visualization. Salary and the student serial number are excluded from predictors to prevent leakage.
+
+See [Lab5/README.md](Lab5/README.md) for the complete experiment. The checked-in sample output is a 40-row development smoke test; the script uses the full shared 215-row dataset when run from the repository root.
+
+---
+
 ## Repository Structure
 
 Each lab has its own source code, notebook, README and output artifacts. Shared datasets and diagrams stay at the repository level.
@@ -118,6 +126,14 @@ IC-2K23-45-AI-Jayesh_Solanki/
 │   └── outputs/
 │       ├── knowledge_representation_output.txt
 │       └── semantic_network.svg
+│
+├── Lab5/
+│   ├── DecisionTree.py
+│   ├── DecisionTree.ipynb
+│   ├── README.md
+│   └── outputs/
+│       ├── decision_tree_output.txt
+│       └── confusion matrix and tree diagrams
 │
 ├── datasets/
 │   ├── README.md
@@ -193,6 +209,12 @@ python Lab4/KnowledgeRepresentation.py
 ```
 
 Run a single knowledge-base example with `--example university` or `--example medical`.
+
+### 7. Run Lab 5
+
+```bash
+python Lab5/DecisionTree.py
+```
 
 ---
 
