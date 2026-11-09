@@ -19,7 +19,7 @@ Following the official **DAVV MCA AI Lab Syllabus (IC-703 C / IC-709D)**, the la
 | [**Lab 1**](Lab1/README.md) | **Unit 1: CO1** | **AI Environment Setup, Production Systems, Water Jug Problem** | Completed |
 | [**Lab 2**](Lab2/README.md) | **Unit 2: CO2** | **Heuristic Search Algorithms (BFS, DFS, Hill Climbing, Best First, A*)** | Completed |
 | [**Lab 3**](Lab3/README.md) | **Unit 3: CO2, CO5** | **AI Programming Frameworks & Data Preparation (NumPy, Pandas, EDA, Pipelines)** | Completed |
-| **Lab 4** | Unit 4: CO1, CO3 | Knowledge Representation & Logical Reasoning (Predicates, Frames, Semantics) | Scheduled |
+| [**Lab 4**](Lab4/README.md) | **Unit 4: CO1, CO3** | **Knowledge Representation & Logical Reasoning (Predicates, Rule-Based Systems, Semantic Networks)** | Completed |
 | **Lab 5** | Unit 5: CO4, CO5 | Machine Learning for Intelligent Decision Making (Decision Trees, Model Eval) | Scheduled |
 | **Lab 6** | Unit 6: CO4, CO5 | Deep Learning Fundamentals using PyTorch (Tensors, Autograd, Regressors, NNs) | Scheduled |
 | **Lab 7** | Unit 7: CO4, CO5 | Explainable AI (Grad-CAM), Adversarial AI (FGSM), PCA/SVD & Mini-Project | Scheduled |
@@ -66,6 +66,18 @@ The shared dataset is stored at [datasets/placement.csv](datasets/placement.csv)
 
 ---
 
+## Lab 4 — Knowledge Representation & Logical Reasoning
+
+Lab 4 demonstrates symbolic ways to represent knowledge and derive new facts:
+- Predicate facts and a university knowledge base.
+- Forward-chaining production rules and a logical inference engine.
+- Semantic network construction, frame representation and conceptual dependency.
+- A small medical knowledge representation example using illustrative rules.
+
+See [Lab4/README.md](Lab4/README.md) for the algorithm, comparison of representation methods, diagram and execution output.
+
+---
+
 ## Repository Structure
 
 Each lab has its own source code, notebook, README and output artifacts. Shared datasets and diagrams stay at the repository level.
@@ -98,6 +110,14 @@ IC-2K23-45-AI-Jayesh_Solanki/
 │   └── outputs/
 │       ├── execution logs
 │       └── screenshots and plots
+│
+├── Lab4/
+│   ├── KnowledgeRepresentation.py
+│   ├── KnowledgeRepresentation.ipynb
+│   ├── README.md
+│   └── outputs/
+│       ├── knowledge_representation_output.txt
+│       └── semantic_network.svg
 │
 ├── datasets/
 │   ├── README.md
@@ -165,6 +185,14 @@ python Lab3/DataPreprocessing.py
 ```
 
 The Lab 3 script reads `datasets/placement.csv` and saves its logs and visualizations in `Lab3/outputs/`.
+
+### 6. Run Lab 4
+
+```bash
+python Lab4/KnowledgeRepresentation.py
+```
+
+Run a single knowledge-base example with `--example university` or `--example medical`.
 
 ---
 
