@@ -1,0 +1,42 @@
+==========================================================================
+ LAB 7: EXPLAINABLE AI, ADVERSARIAL AI & ADVANCED AI
+==========================================================================
+Author: Jayesh Solanki | Roll No: IC-2K23-45 | MCA AI Lab
+
+==========================================================================
+ 1. EXPLAINABLE AI: GRAD-CAM VISUALIZATION
+==========================================================================
+Model Predicted Target Class: 3
+Generated Grad-CAM Heatmap shape: (14, 14)
+Peak Feature Activation Index: (np.int64(3), np.int64(5))
+Saved visualization: gradcam_visualization.png 
+
+==========================================================================
+ 2. ADVERSARIAL AI: FAST GRADIENT SIGN METHOD (FGSM)
+==========================================================================
+Original Prediction: Class 3
+Evaluating Model Robustness against Adversarial Perturbations:
+  Epsilon (Perturbation)    Confidence      Status
+  ------------------------------------------------------------------------
+  eps = 0.00                 11.4          % Robust
+  eps = 0.05                 11.0          % ATTACK SUCCEEDED
+  eps = 0.10                 10.8          % ATTACK SUCCEEDED
+  eps = 0.20                 10.7          % ATTACK SUCCEEDED
+  eps = 0.30                 10.7          % ATTACK SUCCEEDED
+
+Saved visualization: fgsm_robustness_curve.png 
+
+==========================================================================
+ 3. ADVANCED AI: PCA & SVD DIMENSIONALITY REDUCTION
+==========================================================================
+Principal Component Analysis Summary (10D -> 4D):
+  PC1: Explained Variance = 14.47% | Cumulative = 14.47%
+  PC2: Explained Variance = 12.40% | Cumulative = 26.88%
+  PC3: Explained Variance = 11.58% | Cumulative = 38.45%
+  PC4: Explained Variance = 11.00% | Cumulative = 49.45%
+
+Saved visualization: pca_variance_analysis.png 
+
+==========================================================================
+ LAB 7 SUITE COMPLETED SUCCESSFULLY!
+==========================================================================

@@ -1,0 +1,45 @@
+==========================================================================
+ LAB 6: DEEP LEARNING FUNDAMENTALS USING PYTORCH
+==========================================================================
+Author: Jayesh Solanki | Roll No: IC-2K23-45 | MCA AI Lab
+
+==========================================================================
+ 1. PYTORCH TENSOR MANIPULATION & AUTOGRAD
+==========================================================================
+Tensor x (requires_grad=True):
+tensor([[1., 2.],
+        [3., 4.]], requires_grad=True)
+
+Forward evaluation output: 28.5000
+
+Analytical Gradients (dout/dx):
+tensor([[2.0000, 3.5000],
+        [5.0000, 6.5000]])
+Exact Mathematical Verification:
+  Gradient Match: True
+
+==========================================================================
+ 2. LINEAR REGRESSION TRAINING LOOP & OPTIMIZATION
+==========================================================================
+Dataset Size: 100 samples
+Training Configuration: Optimizer=SGD (lr=0.01), Loss=MSELoss
+  Epoch [  1/200] | Loss: 2179.4746 | Learned Weight: 6.182 | Learned Bias: 1.713
+  Epoch [ 40/200] | Loss: 33.0993  | Learned Weight: 8.147 | Learned Bias: 4.040
+  Epoch [ 80/200] | Loss: 25.3620  | Learned Weight: 7.883 | Learned Bias: 5.772
+  Epoch [120/200] | Loss: 19.7583  | Learned Weight: 7.658 | Learned Bias: 7.246
+  Epoch [160/200] | Loss: 15.6999  | Learned Weight: 7.466 | Learned Bias: 8.500
+  Epoch [200/200] | Loss: 12.7606  | Learned Weight: 7.303 | Learned Bias: 9.568
+
+Final Model Parameters: y = 7.303 * x + 9.568
+True Relation Target  : y = 6.500 * x + 15.000
+
+==========================================================================
+ 3. VISUALIZING MODEL CONVERGENCE & FIT
+==========================================================================
+Saved visualization: loss_convergence.png
+Saved visualization: linear_regression_fit.png
+
+Serialized PyTorch weights to: models\linear_regression.pt
+==========================================================================
+ LAB 6 COMPLETED SUCCESSFULLY!
+==========================================================================
