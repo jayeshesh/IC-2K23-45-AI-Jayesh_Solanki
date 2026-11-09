@@ -1,0 +1,18 @@
+  Algorithm           : BFS
+  Problem Domain      : Graph Traversal
+  Status              : FOUND
+  Solution Path       : A -> B -> E -> H
+  Path Length / Cost  : 3
+  Nodes Expanded      : 8
+  Nodes Generated     : 8
+  Execution Time      : 0.008 ms
+
+  Algorithm           : DFS
+  Problem Domain      : Graph Traversal
+  Status              : FOUND
+  Solution Path       : A -> B -> E -> H
+  Path Length / Cost  : 3
+  Nodes Expanded      : 5
+  Nodes Generated     : 6
+  Execution Time      : 0.004 ms
+

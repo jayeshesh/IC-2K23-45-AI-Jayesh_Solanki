@@ -1,0 +1,101 @@
+==========================================================================
+ LAB 2: HEURISTIC SEARCH ALGORITHMS & NAVIGATION (CO2)
+==========================================================================
+Author: Jayesh Solanki | Roll No: IC-2K23-45 | MCA AI Lab
+
+--------------------------------------------------------------------------
+ ACTIVITY 1: 8-PUZZLE SOLVER (A* COMPARISON)
+--------------------------------------------------------------------------
+Initial State:
+  1 2 3
+  0 4 6
+  7 5 8
+Solvability Check (Inversions): True
+
+Heuristic 1 (Misplaced Tiles):
+  Algorithm           : A* (Misplaced)
+  Problem Domain      : 8-Puzzle
+  Status              : FOUND
+  Solution Path       : (1, 2, 3, 0, 4, 6, 7, 5, 8) -> (1, 2, 3, 4, 0, 6, 7, 5, 8) -> (1, 2, 3, 4, 5, 6, 7, 0, 8) -> (1, 2, 3, 4, 5, 6, 7, 8, 0)
+  Path Length / Cost  : 3
+  Nodes Expanded      : 3
+  Nodes Generated     : 9
+  Execution Time      : 0.031 ms
+
+Heuristic 2 (Manhattan Distance):
+  Algorithm           : A* (Manhattan)
+  Problem Domain      : 8-Puzzle
+  Status              : FOUND
+  Solution Path       : (1, 2, 3, 0, 4, 6, 7, 5, 8) -> (1, 2, 3, 4, 0, 6, 7, 5, 8) -> (1, 2, 3, 4, 5, 6, 7, 0, 8) -> (1, 2, 3, 4, 5, 6, 7, 8, 0)
+  Path Length / Cost  : 3
+  Nodes Expanded      : 3
+  Nodes Generated     : 9
+  Execution Time      : 0.018 ms
+
+--------------------------------------------------------------------------
+ ACTIVITY 2: GRAPH TRAVERSAL (BFS VS DFS)
+--------------------------------------------------------------------------
+  Algorithm           : BFS
+  Problem Domain      : Graph Traversal
+  Status              : FOUND
+  Solution Path       : A -> B -> E -> H
+  Path Length / Cost  : 3
+  Nodes Expanded      : 8
+  Nodes Generated     : 8
+  Execution Time      : 0.008 ms
+
+  Algorithm           : DFS
+  Problem Domain      : Graph Traversal
+  Status              : FOUND
+  Solution Path       : A -> B -> E -> H
+  Path Length / Cost  : 3
+  Nodes Expanded      : 5
+  Nodes Generated     : 6
+  Execution Time      : 0.004 ms
+
+--------------------------------------------------------------------------
+ ACTIVITY 3: MAZE SOLVER & ROBOT NAVIGATION (A*)
+--------------------------------------------------------------------------
+  Algorithm           : A*
+  Problem Domain      : Robot Navigation / Maze
+  Status              : FOUND
+  Solution Path       : (0, 0) -> (0, 1) -> (0, 2) -> (0, 3) -> (0, 4) -> (0, 5) -> (1, 5) -> (2, 5) -> (2, 6) -> (2, 7) -> (3, 7) -> (4, 7) -> (5, 7) -> (6, 7) -> (7, 7)
+  Path Length / Cost  : 14
+  Nodes Expanded      : 21
+  Nodes Generated     : 26
+  Execution Time      : 0.035 ms
+
+--------------------------------------------------------------------------
+ ACTIVITY 4: GPS ROUTE PLANNER (ARAD -> BUCHAREST)
+--------------------------------------------------------------------------
+  Algorithm           : Greedy
+  Problem Domain      : Route Planning (Arad -> Bucharest)
+  Status              : FOUND
+  Solution Path       : Arad -> Sibiu -> Fagaras -> Bucharest
+  Path Length / Cost  : 450
+  Nodes Expanded      : 3
+  Nodes Generated     : 8
+  Execution Time      : 0.010 ms
+
+  Algorithm           : A*
+  Problem Domain      : Route Planning (Arad -> Bucharest)
+  Status              : FOUND
+  Solution Path       : Arad -> Sibiu -> Rimnicu -> Pitesti -> Bucharest
+  Path Length / Cost  : 418
+  Nodes Expanded      : 5
+  Nodes Generated     : 11
+  Execution Time      : 0.010 ms
+
+==========================================================================
+ HOMEWORK ANALYSIS: COMPARISON OF SEARCH ALGORITHMS
+==========================================================================
+  Algorithm      Domain               Cost/Len   Expanded   Generated   Time (ms) 
+  ------------------------------------------------------------------------
+  A* (Misplaced) 8-Puzzle             3.0        3          9           0.031     
+  A* (Manhattan) 8-Puzzle             3.0        3          9           0.018     
+  BFS            Graph Traversal      3.0        8          8           0.008     
+  DFS            Graph Traversal      3.0        5          6           0.004     
+  A*             Robot Navigation /   14.0       21         26          0.035     
+  Greedy         Route Planning (Ar   450.0      3          8           0.010     
+  A*             Route Planning (Ar   418.0      5          11          0.010     
+

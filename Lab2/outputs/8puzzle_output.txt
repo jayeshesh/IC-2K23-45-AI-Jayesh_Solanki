@@ -1,0 +1,9 @@
+  Algorithm           : A* (Manhattan)
+  Problem Domain      : 8-Puzzle
+  Status              : FOUND
+  Solution Path       : (1, 2, 3, 0, 4, 6, 7, 5, 8) -> (1, 2, 3, 4, 0, 6, 7, 5, 8) -> (1, 2, 3, 4, 5, 6, 7, 0, 8) -> (1, 2, 3, 4, 5, 6, 7, 8, 0)
+  Path Length / Cost  : 3
+  Nodes Expanded      : 3
+  Nodes Generated     : 9
+  Execution Time      : 0.033 ms
+
