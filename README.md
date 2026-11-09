@@ -21,8 +21,8 @@ Following the official **DAVV MCA AI Lab Syllabus (IC-703 C / IC-709D)**, the la
 | [**Lab 3**](Lab3/README.md) | **Unit 3: CO2, CO5** | **AI Programming Frameworks & Data Preparation (NumPy, Pandas, EDA, Pipelines)** | Completed |
 | [**Lab 4**](Lab4/README.md) | **Unit 4: CO1, CO3** | **Knowledge Representation & Logical Reasoning (Predicates, Rule-Based Systems, Semantic Networks)** | Completed |
 | [**Lab 5**](Lab5/README.md) | **Unit 5: CO4, CO5** | **Decision Tree Classifier and Model Evaluation** | Completed |
-| **Lab 6** | Unit 6: CO4, CO5 | Deep Learning Fundamentals using PyTorch (Tensors, Autograd, Regressors, NNs) | Scheduled |
-| **Lab 7** | Unit 7: CO4, CO5 | Explainable AI (Grad-CAM), Adversarial AI (FGSM), PCA/SVD & Mini-Project | Scheduled |
+| [**Lab 6**](Lab6/README.md) | **Unit 6: CO4, CO5** | **Deep Learning Fundamentals using PyTorch (Tensors, Autograd, Linear Regression)** | Completed |
+| [**Lab 7**](Lab7/README.md) | **Unit 7: CO4, CO5** | **Explainable AI (Grad-CAM), Adversarial AI (FGSM), PCA/SVD Dimensionality Reduction** | Completed |
 
 ---
 
