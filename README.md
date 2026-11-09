@@ -88,31 +88,7 @@ See [Lab5/README.md](Lab5/README.md) for the complete experiment. The checked-in
 
 ## Lab 6 — Deep Learning Fundamentals using PyTorch
 
-Lab 6 implements foundational deep learning mechanics in PyTorch:
-- Multi-dimensional Tensor manipulation and tensor arithmetic.
-- Dynamic computational graph tracking and reverse-mode automatic differentiation (`autograd`).
-- Custom `torch.nn.Module` linear regression model trained via MSE loss and Adam optimizer.
-- Training loss convergence monitoring and parameter convergence inspection.
-- Model persistence saving state dictionary to `models/linear_regression.pt`.
-
-See [Lab6/README.md](Lab6/README.md) for mathematical derivations, loss curves, and execution commands.
-
----
-
-## Lab 7 — Explainable AI, Adversarial AI & Advanced Dimensionality Reduction
-
-Lab 7 explores modern neural interpretability, security, and representation learning:
-- **Explainable AI (Grad-CAM):** Gradient-weighted Class Activation Mapping to extract saliency heatmaps highlighting discriminative spatial regions in convolutional feature maps.
-- **Adversarial Machine Learning (FGSM):** Fast Gradient Sign Method crafting bounded adversarial perturbations ($\epsilon \in [0.0, 0.30]$) to evaluate neural robustness and decision boundary vulnerability.
-- **Representation Learning (PCA & SVD):** High-dimensional projection via Singular Value Decomposition, evaluating eigenvalue scree plots and cumulative variance retention curves.
-
-See [Lab7/README.md](Lab7/README.md) for theoretical background, mathematical equations, visualization figures, and experimental results.
-
----
-
-## Lab 6 — Deep Learning Fundamentals using PyTorch
-
-Lab 6 covers tensor operations, analytical gradient verification with autograd, PyTorch linear regression and a multi-layer feed-forward network for student score prediction. The neural-network experiment uses separate training, validation and test partitions, reports MAE/RMSE and saves its checkpoint in `models/`.
+Lab 6 includes tensor operations, verified autograd gradients, PyTorch linear regression and a multi-layer feed-forward network for student score prediction. The network uses 70/15/15 train/validation/test partitions, training-only normalization, early stopping, MAE/RMSE and a saved checkpoint. Run `python Lab6/PytorchBasics.py` and `python Lab6/NeuralNetwork.py`.
 
 See [Lab6/README.md](Lab6/README.md) for the implementation, results and visualizations.
 
@@ -120,7 +96,7 @@ See [Lab6/README.md](Lab6/README.md) for the implementation, results and visuali
 
 ## Lab 7 — Explainable AI, Adversarial AI, PCA/SVD and Mini-Project
 
-Lab 7 trains a compact residual CNN on the Scikit-learn handwritten Digits dataset, explains a prediction with Grad-CAM, evaluates FGSM robustness, and compares PCA with explicit SVD. The mini-project combines these outputs in an explainability and robustness dashboard.
+Lab 7 trains a CNN on the Scikit-learn Digits dataset, explains a held-out prediction with Grad-CAM, evaluates FGSM robustness over six epsilon values, and compares PCA with explicit SVD. The mini-project saves plots, metrics and a model checkpoint.
 
 See [Lab7/README.md](Lab7/README.md) and the [mini-project report](docs/mini-project-report.pdf).
 
@@ -177,6 +153,7 @@ IC-2K23-45-AI-Jayesh_Solanki/
 │
 ├── Lab6/
 │   ├── PytorchBasics.py
+│   ├── NeuralNetwork.py
 │   ├── PytorchBasics.ipynb
 │   ├── README.md
 │   └── outputs/
@@ -185,6 +162,7 @@ IC-2K23-45-AI-Jayesh_Solanki/
 │
 ├── Lab7/
 │   ├── ExplainableAI.py
+│   ├── MiniProject.py
 │   ├── ExplainableAI.ipynb
 │   ├── README.md
 │   └── outputs/
@@ -282,6 +260,7 @@ python Lab5/DecisionTree.py
 
 ```bash
 python Lab6/PytorchBasics.py
+python Lab6/NeuralNetwork.py
 ```
 
 ### 9. Run Lab 7 and the mini-project

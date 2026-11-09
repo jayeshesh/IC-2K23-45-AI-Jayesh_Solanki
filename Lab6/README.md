@@ -81,6 +81,23 @@ Exported the model state dictionary to the project-level directory:
 
 ---
 
+### Activity 5: Feed-Forward Neural Network for Student Score Prediction
+
+A second experiment trains a three-layer feed-forward network (3 → 32 → 16 → 1) using study hours, attendance percentage and assignment average. The synthetic target includes a nonlinear component.
+
+The 300 records are split into 70% training, 15% validation and 15% testing. Feature and target normalization are fitted only on the training partition. Adam, MSE loss and validation-based early stopping are used.
+
+| Measure | Result |
+|---|---:|
+| Train / validation / test | 210 / 45 / 45 |
+| Early stopping epoch | 108 |
+| Test MAE | 2.408 score points |
+| Test RMSE | 2.999 score points |
+
+The data is synthetic and is used to demonstrate model training, not to make claims about real student performance.
+
+![Student network loss](outputs/student_network_loss.svg)
+
 ## Execution Output Screenshots
 
 ### Complete Terminal Execution Log:
@@ -91,7 +108,7 @@ Exported the model state dictionary to the project-level directory:
 ## Visualizations
 
 ### 1. Training Loss Convergence Curve:
-![Loss Convergence](outputs/loss_convergence.svg)
+![Loss Convergence](outputs/loss_convergence.png)
 
 ### 2. Fitted Linear Regression Line:
 ![Regression Fit](outputs/linear_regression_fit.png)
@@ -117,10 +134,12 @@ cd Lab6
 
 # Run PyTorch autograd and linear regression training
 python PytorchBasics.py
+python NeuralNetwork.py
 ```
 
 - Python Script: [`PytorchBasics.py`](PytorchBasics.py)
 - Interactive Notebook: [`PytorchBasics.ipynb`](PytorchBasics.ipynb)
+- Feed-forward network: [`NeuralNetwork.py`](NeuralNetwork.py)
 - Serialized Model: [`../models/linear_regression.pt`](../models/linear_regression.pt)
 
 ---

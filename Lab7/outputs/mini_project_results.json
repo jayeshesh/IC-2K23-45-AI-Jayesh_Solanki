@@ -1,0 +1,27 @@
+{
+  "dataset": "scikit-learn Digits",
+  "samples": 1797,
+  "train_samples": 1437,
+  "test_samples": 360,
+  "epochs": 45,
+  "clean_test_accuracy": 0.980555534362793,
+  "fgsm_epsilons": [
+    0,
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25
+  ],
+  "fgsm_test_accuracy": [
+    0.980555534362793,
+    0.9027777910232544,
+    0.5611110925674438,
+    0.1944444477558136,
+    0.08888889104127884,
+    0.03055555559694767
+  ],
+  "pca_svd_max_variance_difference": 2.7755575615628914e-17,
+  "first_four_components_variance": 0.4894317030560947,
+  "ten_component_relative_reconstruction_error": 0.5111208150143627
+}
