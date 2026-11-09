@@ -110,6 +110,22 @@ See [Lab7/README.md](Lab7/README.md) for theoretical background, mathematical eq
 
 ---
 
+## Lab 6 — Deep Learning Fundamentals using PyTorch
+
+Lab 6 covers tensor operations, analytical gradient verification with autograd, PyTorch linear regression and a multi-layer feed-forward network for student score prediction. The neural-network experiment uses separate training, validation and test partitions, reports MAE/RMSE and saves its checkpoint in `models/`.
+
+See [Lab6/README.md](Lab6/README.md) for the implementation, results and visualizations.
+
+---
+
+## Lab 7 — Explainable AI, Adversarial AI, PCA/SVD and Mini-Project
+
+Lab 7 trains a compact residual CNN on the Scikit-learn handwritten Digits dataset, explains a prediction with Grad-CAM, evaluates FGSM robustness, and compares PCA with explicit SVD. The mini-project combines these outputs in an explainability and robustness dashboard.
+
+See [Lab7/README.md](Lab7/README.md) and the [mini-project report](docs/mini-project-report.pdf).
+
+---
+
 ## Repository Structure
 
 Each lab has its own source code, notebook, README and output artifacts. Shared datasets and diagrams stay at the repository level.
@@ -165,9 +181,7 @@ IC-2K23-45-AI-Jayesh_Solanki/
 │   ├── README.md
 │   └── outputs/
 │       ├── pytorch_basics_output.txt
-│       ├── loss_convergence.png
-│       ├── linear_regression_fit.png
-│       └── screenshots/
+│       └── SVG training visualizations
 │
 ├── Lab7/
 │   ├── ExplainableAI.py
@@ -175,22 +189,24 @@ IC-2K23-45-AI-Jayesh_Solanki/
 │   ├── README.md
 │   └── outputs/
 │       ├── explainable_ai_output.txt
-│       ├── gradcam_visualization.png
-│       ├── fgsm_robustness_curve.png
-│       ├── pca_variance_analysis.png
-│       └── screenshots/
+│       ├── mini_project_results.json
+│       └── SVG dashboard and diagnostics
 │
 ├── datasets/
 │   ├── README.md
 │   └── placement.csv
 ├── models/
 │   ├── README.md
-│   └── linear_regression.pt
+│   ├── linear_regression.pt
+│   ├── student_score_network.pt
+│   └── digit_resnet.pt
 ├── docs/
 │   ├── README.md
 │   ├── algorithm-flowcharts/
 │   ├── architecture-diagrams/
-│   └── performance-analysis.pdf
+│   ├── performance-analysis.pdf
+│   ├── mini-project-report.md
+│   └── mini-project-report.pdf
 ├── requirements.txt
 ├── .gitignore
 └── README.md
@@ -268,7 +284,7 @@ python Lab5/DecisionTree.py
 python Lab6/PytorchBasics.py
 ```
 
-### 9. Run Lab 7
+### 9. Run Lab 7 and the mini-project
 
 ```bash
 python Lab7/ExplainableAI.py

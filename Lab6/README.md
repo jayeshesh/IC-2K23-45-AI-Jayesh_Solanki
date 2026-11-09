@@ -91,7 +91,7 @@ Exported the model state dictionary to the project-level directory:
 ## Visualizations
 
 ### 1. Training Loss Convergence Curve:
-![Loss Convergence](outputs/loss_convergence.png)
+![Loss Convergence](outputs/loss_convergence.svg)
 
 ### 2. Fitted Linear Regression Line:
 ![Regression Fit](outputs/linear_regression_fit.png)
