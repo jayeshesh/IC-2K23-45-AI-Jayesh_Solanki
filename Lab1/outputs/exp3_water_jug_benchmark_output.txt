@@ -1,0 +1,17 @@
+$ python exp3_water_jug.py --benchmark
+# Captured: 2026-11-09 15:25:00 | Python 3.13.13 | Windows | exit code: 0
+========================================================================
+ EXPERIMENT 3 : WATER JUG PRODUCTION SYSTEM - BENCHMARK
+========================================================================
+    A   B   T Jug  Solvable  Steps  Expanded  Generated  Reachable  Time (ms)
+  ----------------------------------------------------------------------
+    4   3   2 A    Yes           6        11         39         14      0.028
+    4   3   2 ANY  Yes           4         8         27         14      0.017
+    5   3   4 A    Yes           6        11         39         16      0.021
+    8   5   6 ANY  Yes           6        11         39         26      0.021
+    9   4   6 A    Yes           8        15         55         26      0.027
+    7   5   1 B    Yes           8        16         59         24      0.030
+   12   7   9 ANY  Yes           8        16         59         38      0.031
+    6   4   3 ANY  No            -         -          -         10          -
+
+Note: execution times depend on the machine and vary between runs.

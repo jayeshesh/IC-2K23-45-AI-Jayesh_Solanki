@@ -1,0 +1,45 @@
+$ python exp3_water_jug.py -a 6 -b 4 -t 3 -g ANY
+# Captured: 2026-11-09 15:25:00 | Python 3.13.13 | Windows | exit code: 1
+========================================================================
+ EXPERIMENT 3 : WATER JUG PROBLEM AS A PRODUCTION SYSTEM
+========================================================================
+Problem formulation
+  Jug A capacity      : 6 litres
+  Jug B capacity      : 4 litres
+  Target              : 3 litres in either jug
+  State               : (x, y) = litres in (Jug A, Jug B)
+  State space         : {(x, y) | 0 <= x <= 6, 0 <= y <= 4}  (35 states)
+  Initial state       : (0, 0)
+  Goal state(s)       : (3, y) or (x, 3) - target in either jug
+  Solvability check   : gcd(6, 4) = 2 does not divide 3 -> NOT solvable
+
+Production rules (IF condition THEN new state)
+  Rule Name                            Condition                        New state
+  ----------------------------------------------------------------------
+  R1   Fill Jug A                      x < A                            (A, y)
+  R2   Fill Jug B                      y < B                            (x, B)
+  R3   Empty Jug A                     x > 0                            (0, y)
+  R4   Empty Jug B                     y > 0                            (x, 0)
+  R5   Pour A into B until B is full   x > 0 and y < B and x + y >= B   (x - (B - y), B)
+  R6   Pour B into A until A is full   y > 0 and x < A and x + y >= A   (A, y - (A - x))
+  R7   Pour all water of A into B      x > 0 and x + y < B              (0, x + y)
+  R8   Pour all water of B into A      y > 0 and x + y < A              (x + y, 0)
+
+Result: The target cannot be measured with these jugs.
+        The rule base was not executed (necessary condition failed).
+
+$ python exp3_water_jug.py -a 3 -b 2 -t 5
+# Captured: 2026-11-09 15:25:00 | Python 3.13.13 | Windows | exit code: 2
+Input error: Target 5 L cannot be held by the selected jug(s); maximum possible is 3 L.
+
+$ python exp3_water_jug.py -a 0 -b 3 -t 2
+# Captured: 2026-11-09 15:25:00 | Python 3.13.13 | Windows | exit code: 2
+usage: exp3_water_jug.py [-h] [-a CAP_A] [-b CAP_B] [-t TARGET] [-g {A,B,ANY}]
+                         [--trace] [--interactive] [--benchmark]
+exp3_water_jug.py: error: argument -a/--cap-a: 0 must be greater than 0
+
+$ python exp3_water_jug.py -a four -b 3 -t 2
+# Captured: 2026-11-09 15:25:00 | Python 3.13.13 | Windows | exit code: 2
+usage: exp3_water_jug.py [-h] [-a CAP_A] [-b CAP_B] [-t TARGET] [-g {A,B,ANY}]
+                         [--trace] [--interactive] [--benchmark]
+exp3_water_jug.py: error: argument -a/--cap-a: 'four' is not a valid integer

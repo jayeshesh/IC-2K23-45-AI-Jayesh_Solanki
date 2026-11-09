@@ -1,0 +1,45 @@
+$ python exp3_water_jug.py -a 4 -b 3 -t 2 -g ANY
+# Captured: 2026-11-09 15:25:00 | Python 3.13.13 | Windows | exit code: 0
+========================================================================
+ EXPERIMENT 3 : WATER JUG PROBLEM AS A PRODUCTION SYSTEM
+========================================================================
+Problem formulation
+  Jug A capacity      : 4 litres
+  Jug B capacity      : 3 litres
+  Target              : 2 litres in either jug
+  State               : (x, y) = litres in (Jug A, Jug B)
+  State space         : {(x, y) | 0 <= x <= 4, 0 <= y <= 3}  (20 states)
+  Initial state       : (0, 0)
+  Goal state(s)       : (2, y) or (x, 2) - target in either jug
+  Solvability check   : gcd(4, 3) = 1 divides 2 -> solvable
+
+Production rules (IF condition THEN new state)
+  Rule Name                            Condition                        New state
+  ----------------------------------------------------------------------
+  R1   Fill Jug A                      x < A                            (A, y)
+  R2   Fill Jug B                      y < B                            (x, B)
+  R3   Empty Jug A                     x > 0                            (0, y)
+  R4   Empty Jug B                     y > 0                            (x, 0)
+  R5   Pour A into B until B is full   x > 0 and y < B and x + y >= B   (x - (B - y), B)
+  R6   Pour B into A until A is full   y > 0 and x < A and x + y >= A   (A, y - (A - x))
+  R7   Pour all water of A into B      x > 0 and x + y < B              (0, x + y)
+  R8   Pour all water of B into A      y > 0 and x + y < A              (x + y, 0)
+
+Solution path
+  Step  Rule  Action                            State (x, y)
+  ----------------------------------------------------------------------
+  0     -     Initial state                     (0, 0)
+  1     R2    Fill Jug B                        (0, 3)
+  2     R8    Pour all water of B into A        (3, 0)
+  3     R2    Fill Jug B                        (3, 3)
+  4     R6    Pour B into A until A is full     (4, 2)
+
+Performance analysis
+  Solution length (rule applications) : 4
+  States expanded                     : 8
+  States generated (incl. repeats)    : 27
+  Maximum OPEN list size              : 3
+  States reachable from (0, 0)        : 14
+  Execution time                      : 0.026 ms
+
+Result: GOAL REACHED - final state (4, 2) contains 2 L in the required jug after 4 rule applications.

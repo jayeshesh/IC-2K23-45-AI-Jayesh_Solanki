@@ -1,0 +1,29 @@
+$ python exp1_environment_setup.py --json ../outputs/exp1_environment_report.json
+# Captured: 2026-11-09 15:25:00 | Python 3.13.13 | Windows | exit code: 0
+========================================================================
+ EXPERIMENT 1 : AI DEVELOPMENT ENVIRONMENT SETUP AND VERIFICATION
+========================================================================
+  Check                       Req.  Status   Detail
+  ----------------------------------------------------------------------
+  Python interpreter          yes   PASS     Python 3.13.13 (CPython), required >= 3.8
+  Operating system            no    INFO     Windows 11 (AMD64)
+  Interpreter path            no    INFO     ~\AppData\Local\Programs\Python\Python313\python.exe
+  Virtual environment         no    INFO     not active (system interpreter)
+  pip package manager         yes   PASS     pip 26.1.1
+  Jupyter: ipykernel          no    PASS     7.3.0
+  Jupyter: nbformat           no    PASS     5.10.4
+  Jupyter: nbconvert          no    PASS     7.17.1
+  Jupyter: notebook           no    MISSING  not installed (pip install notebook)
+  Jupyter: jupyterlab         no    PASS     4.6.1
+  Google Colab runtime        no    INFO     not detected (local machine)
+  Lab 1 standard modules      yes   PASS     8 modules imported: argparse, collections, dataclasses, math, operator, time, typing, json
+  Later labs: numpy           no    INFO     2.2.6
+  Later labs: pandas          no    INFO     3.0.3
+  Later labs: matplotlib      no    INFO     not installed (not needed in Lab 1)
+  Later labs: scikit-learn    no    INFO     1.8.0
+  Later labs: torch           no    INFO     not installed (not needed in Lab 1)
+  Sanity computation          yes   PASS     sum of squares 0..99999 = 333328333350000 in 3.32 ms
+  ----------------------------------------------------------------------
+  Required checks passed : 4/4
+  Environment status     : READY - environment is suitable for Lab 1
+  JSON report saved to   : exp1_environment_report.json

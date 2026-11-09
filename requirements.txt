@@ -1,0 +1,19 @@
+# Core Lab 1 implementations rely ONLY on the Python 3 standard library.
+# The dependencies below are for notebook execution, documentation generation,
+# and code quality verification.
+
+# Interactive Notebook & Jupyter Tools
+jupyterlab>=4.0.0
+notebook>=7.0.0
+ipykernel>=6.25.0
+nbformat>=5.9.0
+nbconvert>=7.8.0
+
+# Documentation & Diagram Compilation
+reportlab>=4.0.0
+pillow>=10.0.0
+pymupdf>=1.23.0
+
+# Code Quality & PEP-8 Compliance
+pycodestyle>=2.11.0
+pyflakes>=3.1.0
