@@ -1,108 +1,111 @@
-# Lab 7: Explainable AI, Adversarial Attacks & Advanced Representation Learning
+# Lab 7 – Explainable AI, Adversarial AI, PCA/SVD and Mini-Project
 
-**Student Name**: Jayesh Solanki  
-**Roll Number**: IC-2K23-45  
-**Course**: Master of Computer Applications (MCA) — Artificial Intelligence Lab (IC-703 C / IC-709D)  
-**Institution**: International Institute of Professional Studies (IIPS), Devi Ahilya Vishwavidyalaya (DAVV), Indore  
+**Course:** MCA – Artificial Intelligence (IC-703 C / IC-709D)  
+**Unit:** Unit 7 – Explainable AI, Adversarial AI and Advanced Applications  
+**Student:** Jayesh Solanki (Roll No: IC-2K23-45)  
+**Frameworks:** PyTorch, Scikit-learn, NumPy and Matplotlib
 
----
+## Aim / Problem Statement
 
-## 1. Experiment Overview & Objectives
+Train a handwritten-digit classifier and study three complementary aspects of an AI model: which image regions support a prediction (Grad-CAM), how input perturbations affect the prediction (FGSM), and how an image feature space can be represented with fewer dimensions (PCA/SVD). These activities form the mini-project **Explainable and Robust Handwritten Digit Recognition**.
 
-As artificial intelligence architectures transition from shallow heuristic models to deep, overparameterized neural networks, understanding inner representations and securing inference pipelines becomes paramount. Lab 7 explores modern techniques in deep learning interpretability, adversarial security, and high-dimensional geometry:
+## Dataset
 
-1. **Explainable AI (XAI) via Grad-CAM**: Demystifying deep convolutional neural network feature activations through gradient-weighted localization maps to discover the salient visual evidence driving classification decisions.
-2. **Adversarial Machine Learning via FGSM**: Investigating vulnerability surfaces in neural representations by generating targeted single-step adversarial perturbations using the Fast Gradient Sign Method.
-3. **Advanced AI & Dimensionality Reduction via PCA / SVD**: Compacting latent feature spaces, orthogonalizing correlated axes, and analyzing variance retention curves through Singular Value Decomposition.
+The Scikit-learn Digits dataset contains 1,797 labelled grayscale images, each 8 × 8 pixels, across ten classes (digits 0–9). Pixel values are scaled to [0, 1]. A stratified split creates 1,437 training images and 360 held-out test images. No external download is required.
 
----
+## Model and Algorithm
 
-## 2. Theoretical Foundations & Mathematical Formulations
+A compact two-convolution neural network is trained for 45 epochs using mini-batches, Adam and cross-entropy loss. The script is deterministic under the fixed random seed.
 
-### 2.1 Gradient-Weighted Class Activation Mapping (Grad-CAM)
-Standard convolutional architectures retain spatial geometry in their final convolutional layers before global pooling and linear projections. Grad-CAM computes the importance weight $\alpha_k^c$ of feature map activation $A^k$ for a targeted output class score $y^c$:
+1. Load the Digits dataset and create a stratified training/test split.
+2. Train the CNN on the training images.
+3. Evaluate clean accuracy on the held-out test images.
+4. Select a correctly classified test image and calculate Grad-CAM from gradient-weighted convolutional feature maps.
+5. Apply FGSM to the held-out test set at epsilon values 0.00, 0.05, 0.10, 0.15, 0.20 and 0.25.
+6. Center the training feature matrix, calculate explicit NumPy SVD, and compare explained-variance ratios with Scikit-learn PCA.
+7. Save the figures, JSON results and trained model checkpoint.
 
-$$\alpha_k^c = \frac{1}{Z} \sum_{i} \sum_{j} \frac{\partial y^c}{\partial A_{i, j}^k}$$
+## Results / Output
 
-where $Z = U \times V$ represents the spatial dimensions of the feature map. The final heat map $L_{\text{Grad-CAM}}^c$ is computed as a rectified linear combination of feature maps weighted by $\alpha_k^c$:
+### Clean classification
 
-$$L_{\text{Grad-CAM}}^c = \text{ReLU}\left(\sum_k \alpha_k^c A^k\right)$$
+| Measure | Result |
+|---|---:|
+| Training images | 1,437 |
+| Test images | 360 |
+| Training epochs | 45 |
+| Clean test accuracy | **98.06%** |
 
-The $\text{ReLU}$ operation filters out features that contribute negatively to the target class, focusing strictly on positive evidence.
+### FGSM robustness
 
-### 2.2 Fast Gradient Sign Method (FGSM)
-Goodfellow et al. demonstrated that adversarial vulnerability in neural networks arises primarily from their linear behavior in high-dimensional space rather than deep non-linearities. Given an input sample $x$, true label $y$, and model loss $J(\theta, x, y)$, FGSM synthesizes an adversarial example $x_{\text{adv}}$ constrained by maximum perturbation $\epsilon$ under the $L_\infty$ norm:
+| Epsilon | Test accuracy |
+|---:|---:|
+| 0.00 | 98.06% |
+| 0.05 | 90.28% |
+| 0.10 | 56.11% |
+| 0.15 | 19.44% |
+| 0.20 | 8.89% |
+| 0.25 | 3.06% |
 
-$$x_{\text{adv}} = x + \epsilon \cdot \text{sign}\left(\nabla_x J(\theta, x, y)\right)$$
+The model's accuracy decreases as perturbation magnitude increases. This is a controlled white-box FGSM experiment, not a claim of robustness against every possible attack.
 
-By taking a step in the direction of the gradient of the loss with respect to the input, the adversary maximizes model error with minimal imperceptible noise.
+### PCA and explicit SVD
 
-### 2.3 Principal Component Analysis (PCA) & SVD
-Given a centered data matrix $X \in \mathbb{R}^{N \times D}$, PCA finds orthogonal directions of maximum variance. Through Singular Value Decomposition:
+- The first four components retain **48.94%** of the centered feature variance.
+- The maximum explained-variance ratio difference between PCA and direct SVD for the first ten components is approximately zero (2.78 × 10⁻¹⁷).
+- Relative reconstruction error using ten components is **0.5111**.
 
-$$X = U \Sigma V^T$$
+## Visualizations
 
-The columns of $V$ represent the principal eigenvectors of the empirical covariance matrix $\frac{1}{N} X^T X$. The explained variance ratio for the $k$-th component corresponds to:
+**Grad-CAM explanation for a held-out digit:**
 
-$$\text{Explained Variance Ratio}_k = \frac{\sigma_k^2}{\sum_{j=1}^D \sigma_j^2}$$
+![Grad-CAM](outputs/gradcam_visualization.svg)
 
----
+**FGSM test accuracy versus epsilon:**
 
-## 3. Directory Structure
+![FGSM robustness](outputs/fgsm_robustness_curve.svg)
 
-```text
-Lab7/
-├── ExplainableAI.py                 # Source code implementing Grad-CAM, FGSM, and PCA
-├── ExplainableAI.ipynb              # Fully executed interactive Jupyter Notebook
-├── outputs/
-│   ├── explainable_ai_output.txt    # Standard execution console logs
-│   ├── gradcam_visualization.png    # Grad-CAM input, heatmap, and overlay visualization
-│   ├── fgsm_robustness_curve.png    # Adversarial confidence vs. epsilon curve
-│   ├── pca_variance_analysis.png    # Scree plot and cumulative variance curve
-│   └── screenshots/
-│       └── explainable_ai_output.png# Terminal output snapshot
-└── README.md                        # Comprehensive laboratory documentation
-```
+**PCA and explicit SVD variance comparison:**
 
----
+![PCA and SVD](outputs/pca_svd_comparison.svg)
 
-## 4. Empirical Visualizations & Outputs
+**CNN training loss:**
 
-### 4.1 Grad-CAM Saliency Map
-The synthetic convolutional pipeline localizes discriminative features within the spatial activation grid:
+![Training loss](outputs/training_loss.svg)
 
-![Grad-CAM Visualization](outputs/gradcam_visualization.png)
+The complete metrics are in [outputs/mini_project_results.json](outputs/mini_project_results.json), and the console log is in [outputs/explainable_ai_output.txt](outputs/explainable_ai_output.txt).
 
-### 4.2 FGSM Adversarial Robustness Curve
-Evaluating output confidence degradation across varying perturbation magnitudes ($\epsilon \in [0.0, 0.30]$):
+## Mini-Project Deliverables
 
-![FGSM Robustness Curve](outputs/fgsm_robustness_curve.png)
+- [Training and evaluation implementation](MiniProject.py)
+- [Runnable entry point](ExplainableAI.py)
+- [Jupyter notebook](ExplainableAI.ipynb)
+- [Dashboard metrics](outputs/mini_project_results.json)
+- [Mini-project report (Markdown)](../docs/mini-project-report.md)
+- [Mini-project report (PDF)](../docs/mini-project-report.pdf)
+- Model checkpoint generated at `models/digit_resnet.pt`
 
-### 4.3 PCA Variance Retention
-Scree plot displaying individual and cumulative variance explained by the first four principal components:
+## Execution
 
-![PCA Variance Analysis](outputs/pca_variance_analysis.png)
+Run from the repository root after installing `requirements.txt`:
 
-### 4.4 Terminal Execution Snapshot
-![Terminal Execution](outputs/screenshots/explainable_ai_output.png)
-
----
-
-## 5. Execution Instructions
-
-### Running the Python Script
 ```bash
-python ExplainableAI.py
+python Lab7/ExplainableAI.py
 ```
 
-### Running the Jupyter Notebook
-```bash
-jupyter notebook ExplainableAI.ipynb
-```
+## Limitations
 
----
+The Digits dataset contains small 8 × 8 grayscale samples, so results may not transfer to larger real-world images. FGSM tests one white-box gradient attack at selected epsilon values; it does not evaluate every adversarial threat. Grad-CAM is shown for one correctly classified test example and should be interpreted as a local explanation.
 
-## 6. Key Takeaways & Learning Outcomes
-1. **Model Interpretability**: Grad-CAM effectively isolates feature maps responsible for classification without requiring architectural modifications or retraining.
-2. **Robustness Vulnerability**: Even minimal input perturbations ($\epsilon = 0.05$) can drastically manipulate network confidence and induce misclassifications.
-3. **Dimensionality Reduction**: SVD-driven PCA effectively orthogonalizes feature correlations, concentrating nearly 50% of 10-dimensional variance into 4 principal components.
+## Learning Outcomes
+
+- Explained a CNN prediction with gradient-weighted activation maps.
+- Implemented FGSM and measured accuracy degradation across perturbation levels.
+- Compared PCA explained variance with an explicit SVD implementation.
+- Built a reproducible mini-project combining classification, explainability and robustness diagnostics.
+
+## Academic References
+
+1. Selvaraju, R. R., et al. (2017). *Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization*.
+2. Goodfellow, I. J., Shlens, J., & Szegedy, C. (2015). *Explaining and Harnessing Adversarial Examples*.
+3. Devi Ahilya Vishwavidyalaya (DAVV), *MCA Artificial Intelligence Lab Syllabus (IC-703 C / IC-709D)*, Unit 7.
