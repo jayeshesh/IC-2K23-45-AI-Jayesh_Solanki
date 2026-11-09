@@ -4,7 +4,7 @@
 **Unit:** Unit 3 – AI Programming Frameworks & Data Preparation (CO2, CO5)  
 **Student:** Jayesh Solanki (Roll No: IC-2K23-45)  
 **Libraries Used:** NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn  
-**Benchmark Dataset:** Campus Placement Dataset (`placement.csv`)
+**Benchmark Dataset:** Campus Placement Dataset (`../datasets/placement.csv`)
 
 ---
 

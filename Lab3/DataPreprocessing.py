@@ -1,4 +1,3 @@
-from typing import Tuple
 #!/usr/bin/env python3
 """
 Lab 3: AI Programming Frameworks & Data Preparation Pipeline.
@@ -18,6 +17,8 @@ Covers all Unit 3 Laboratory Activities:
   8. Data Visualizations (Saved to outputs/)
 """
 
+from typing import Tuple
+
 import os
 import sys
 import matplotlib
@@ -32,7 +33,7 @@ from sklearn.preprocessing import LabelEncoder, MinMaxScaler, StandardScaler
 
 LINE_WIDTH = 74
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_PATH = os.path.join(BASE_DIR, "placement.csv")
+DATA_PATH = os.path.abspath(os.path.join(BASE_DIR, "..", "datasets", "placement.csv"))
 OUT_DIR = os.path.join(BASE_DIR, "outputs")
 os.makedirs(OUT_DIR, exist_ok=True)
 

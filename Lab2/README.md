@@ -167,6 +167,24 @@ In accordance with the **Unit 2 Analysis Requirement** (*"Compare heuristic sear
 
 ---
 
+## Activity 5: Hill Climbing
+
+Hill Climbing is a local search method. It begins at an initial value, evaluates nearby states, and moves to a neighbour only when that neighbour gives a better objective value. It stops when neither neighbour improves the current state.
+
+The example maximizes:
+
+```text
+f(x) = -((x - 4) ** 2) + 16
+```
+
+Starting at `x = 0`, the algorithm moves through `0 -> 1 -> 2 -> 3 -> 4` and reaches a maximum value of `16`. The function can also stop at a local maximum depending on the objective and starting state.
+
+Run this activity separately:
+
+```bash
+python SearchAlgorithms.py --activity hill
+```
+
 ## Source Files & Execution Instructions
 
 ### Repository Files
@@ -187,6 +205,7 @@ python SearchAlgorithms.py --activity 8puzzle
 python SearchAlgorithms.py --activity graph
 python SearchAlgorithms.py --activity maze
 python SearchAlgorithms.py --activity route
+python SearchAlgorithms.py --activity hill
 ```
 
 ---

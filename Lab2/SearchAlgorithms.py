@@ -556,6 +556,56 @@ def solve_route_planner(
     )
 
 
+# Activity 5: Hill Climbing (Function Maximization)
+# ============================================================================
+def hill_climbing_maximize(
+    start: int = 0, step: int = 1, max_iterations: int = 20
+) -> SearchResult:
+    """Move to a better neighbour until a local maximum is reached.
+
+    The sample objective has its maximum at x = 4:
+        f(x) = -((x - 4) ** 2) + 16
+    """
+    if step <= 0:
+        raise ValueError("step must be a positive integer")
+    if max_iterations <= 0:
+        raise ValueError("max_iterations must be positive")
+
+    def objective(x: int) -> int:
+        return -((x - 4) ** 2) + 16
+
+    start_time = time.perf_counter()
+    current = start
+    path = [current]
+    expanded = 0
+    generated = 1
+
+    for _ in range(max_iterations):
+        neighbours = [current - step, current + step]
+        expanded += 1
+        generated += len(neighbours)
+        best_neighbour = max(neighbours, key=objective)
+
+        if objective(best_neighbour) <= objective(current):
+            break
+
+        current = best_neighbour
+        path.append(current)
+
+    elapsed = (time.perf_counter() - start_time) * 1000.0
+    return SearchResult(
+        "Hill Climbing",
+        "Function Maximization",
+        True,
+        path,
+        objective(current),
+        expanded,
+        generated,
+        elapsed,
+        {"maximum_x": current, "maximum_value": objective(current)},
+    )
+
+
 # ============================================================================
 # Formatting & Presentation Helpers
 # ============================================================================
@@ -667,7 +717,7 @@ def main() -> int:
     )
     parser.add_argument(
         "--activity",
-        choices=["all", "8puzzle", "graph", "maze", "route"],
+        choices=["all", "8puzzle", "graph", "maze", "route", "hill"],
         default="all",
         help="Select specific activity to run (default: all)",
     )
@@ -691,6 +741,9 @@ def main() -> int:
                 ROADMAP, SLD_TO_BUCHAREST, "Arad", "Bucharest", "A*"
             )
         )
+    elif args.activity == "hill":
+        print_banner("ACTIVITY 5: HILL CLIMBING")
+        print_result(hill_climbing_maximize())
 
     return 0
 
