@@ -1,0 +1,102 @@
+==========================================================================
+ LAB 3: AI DATA PREPARATION PIPELINE & EDA
+==========================================================================
+Author: Jayesh Solanki | Roll No: IC-2K23-45 | MCA AI Lab (IC-703 C)
+
+Loaded dataset: 215 rows, 15 columns.
+
+==========================================================================
+ 1. EXPLORATORY DATA ANALYSIS (EDA)
+==========================================================================
+Dataset Info:
+<class 'pandas.DataFrame'>
+RangeIndex: 215 entries, 0 to 214
+Data columns (total 15 columns):
+ #   Column          Non-Null Count  Dtype  
+---  ------          --------------  -----  
+ 0   sl_no           215 non-null    int64  
+ 1   gender          215 non-null    str    
+ 2   ssc_p           215 non-null    float64
+ 3   ssc_b           215 non-null    str    
+ 4   hsc_p           215 non-null    float64
+ 5   hsc_b           215 non-null    str    
+ 6   hsc_s           215 non-null    str    
+ 7   degree_p        215 non-null    float64
+ 8   degree_t        215 non-null    str    
+ 9   workex          215 non-null    str    
+ 10  etest_p         215 non-null    float64
+ 11  specialisation  215 non-null    str    
+ 12  mba_p           215 non-null    float64
+ 13  status          215 non-null    str    
+ 14  salary          148 non-null    float64
+dtypes: float64(6), int64(1), str(8)
+memory usage: 35.0 KB
+None
+
+Statistical Summary (Numerical Features):
+        sl_no   ssc_p   hsc_p  degree_p  etest_p   mba_p     salary
+count  215.00  215.00  215.00    215.00   215.00  215.00     148.00
+mean   108.00   67.30   66.33     66.37    72.10   62.28  288655.41
+std     62.21   10.83   10.90      7.36    13.28    5.83   93457.45
+min      1.00   40.89   37.00     50.00    50.00   51.21  200000.00
+25%     54.50   60.60   60.90     61.00    60.00   57.94  240000.00
+50%    108.00   67.00   65.00     66.00    71.00   62.00  265000.00
+75%    161.50   75.70   73.00     72.00    83.50   66.26  300000.00
+max    215.00   89.40   97.70     91.00    98.00   77.89  940000.00
+
+Class Distribution (Target: 'status'):
+  Placed      : 148 (68.8%)
+  Not Placed  :  67 (31.2%)
+
+==========================================================================
+ 2. DATA CLEANING & DOMAIN IMPUTATION
+==========================================================================
+Dropped identifier: 'sl_no'
+Missing values in 'salary': 67 (Unplaced candidates)
+Imputed unplaced candidates salary with 0.0
+
+==========================================================================
+ 3. CATEGORICAL ENCODING & PIPELINE SPLITTING
+==========================================================================
+Label Encoded binary feature: 'gender' -> ['F', 'M']
+Label Encoded binary feature: 'ssc_b' -> ['Central', 'Others']
+Label Encoded binary feature: 'hsc_b' -> ['Central', 'Others']
+Label Encoded binary feature: 'workex' -> ['No', 'Yes']
+One-Hot Encoded nominal features: ['hsc_s', 'degree_t', 'specialisation']
+Predictor feature matrix shape: (215, 14)
+
+==========================================================================
+ 4. LEAK-FREE SPLIT, FEATURE SELECTION & SCALING
+==========================================================================
+Training set: 172 samples | Test set: 43 samples
+
+Feature Importance Ranking (ANOVA F-Test & Mutual Information):
+  Feature                      ANOVA F      p-value      Mutual Info
+  ------------------------------------------------------------------------
+  ssc_p                        97.17        2.0508e-18   0.224     
+  degree_p                     61.90        4.0159e-13   0.172     
+  hsc_p                        48.87        5.9627e-11   0.166     
+  workex                       13.25        3.6165e-04   0.053     
+  specialisation_Mkt&HR        11.90        7.0771e-04   0.042     
+  degree_t_Others              5.54         1.9715e-02   0.031     
+  etest_p                      2.52         1.1393e-01   0.000     
+  gender                       1.73         1.9067e-01   0.030     
+  ssc_b                        0.67         4.1448e-01   0.000     
+  hsc_s_Commerce               0.38         5.3769e-01   0.000     
+  mba_p                        0.20         6.5180e-01   0.036     
+  degree_t_Sci&Tech            0.18         6.7547e-01   0.000     
+  hsc_s_Science                0.02         8.9601e-01   0.018     
+  hsc_b                        0.01         9.4038e-01   0.000     
+
+Scaling Comparison (Academic Percentages):
+  StandardScaler -> Mean: [-0. -0.  0. -0.  0.], Std: [1. 1. 1. 1. 1.]
+  MinMaxScaler   -> Min: [0. 0. 0. 0. 0.], Max: [1. 1. 1. 1. 1.]
+
+==========================================================================
+ 5. GENERATING DATA VISUALIZATIONS
+==========================================================================
+Saved visualization: placement_status_distribution.png
+Saved visualization: feature_correlation_analysis.png
+==========================================================================
+ PIPELINE COMPLETED SUCCESSFULLY!
+==========================================================================

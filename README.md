@@ -18,7 +18,7 @@ Following the official **DAVV MCA AI Lab Syllabus (IC-703 C / IC-709D)**, the la
 |---|---|---|:---:|
 | [**Lab 1**](Lab1/README.md) | **Unit 1: CO1** | **AI Environment Setup, Production Systems, Water Jug Problem** | Completed |
 | [**Lab 2**](Lab2/README.md) | **Unit 2: CO2** | **Heuristic Search Algorithms (BFS, DFS, Hill Climbing, Best First, A*)** | Completed |
-| **Lab 3** | Unit 3: CO2, CO5 | AI Programming Frameworks & Data Preparation (NumPy, Pandas, EDA, Pipelines) | Scheduled |
+| [**Lab 3**](Lab3/README.md) | **Unit 3: CO2, CO5** | **AI Programming Frameworks & Data Preparation (NumPy, Pandas, EDA, Pipelines)** | Completed |
 | **Lab 4** | Unit 4: CO1, CO3 | Knowledge Representation & Logical Reasoning (Predicates, Frames, Semantics) | Scheduled |
 | **Lab 5** | Unit 5: CO4, CO5 | Machine Learning for Intelligent Decision Making (Decision Trees, Model Eval) | Scheduled |
 | **Lab 6** | Unit 6: CO4, CO5 | Deep Learning Fundamentals using PyTorch (Tensors, Autograd, Regressors, NNs) | Scheduled |
